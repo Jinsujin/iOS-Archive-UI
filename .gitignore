@@ -1,5 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,xcode,cocoapods,swiftpackagemanager
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,xcode,cocoapods,swiftpackagemanager
+
+# Created by https://www.toptal.com/developers/gitignore/api/cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -9,13 +10,12 @@
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
 
-### SwiftPackageManager ###
-Packages
-.build/
-xcuserdata
-DerivedData/
-*.xcodeproj
+# End of https://www.toptal.com/developers/gitignore/api/cocoapods
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,visualstudiocode
 
+### DS_Store ###
+*/.DS_Store
 
 ### VisualStudioCode ###
 .vscode/*
@@ -36,6 +36,12 @@ DerivedData/
 .history
 .ionide
 
+# Support for Project snippet scope
+.vscode/*.code-snippets
+
+# Ignore code-workspaces
+*.code-workspace
+
 ### Xcode ###
 ## User settings
 xcuserdata/
@@ -48,9 +54,8 @@ xcuserdata/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
-!*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,xcode,cocoapods,swiftpackagemanager
+# End of https://www.toptal.com/developers/gitignore/api/xcode,visualstudiocode
