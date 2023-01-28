@@ -17,6 +17,8 @@
 		988B74C129851A8700CC18BC /* UI_ArchiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74C029851A8700CC18BC /* UI_ArchiveUITests.swift */; };
 		988B74C329851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */; };
 		988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74CF29851E6C00CC18BC /* CarouselViewController.swift */; };
+		988B74D3298526DC00CC18BC /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74D2298526DC00CC18BC /* StackLinkedList.swift */; };
+		988B74D4298526DC00CC18BC /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74D2298526DC00CC18BC /* StackLinkedList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 		988B74C029851A8700CC18BC /* UI_ArchiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ArchiveUITests.swift; sourceTree = "<group>"; };
 		988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ArchiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		988B74CF29851E6C00CC18BC /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		988B74D2298526DC00CC18BC /* StackLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		988B749E29851A8500CC18BC /* UI-Archive */ = {
 			isa = PBXGroup;
 			children = (
+				988B74D5298526F400CC18BC /* DataStructure */,
 				988B74D129851F3800CC18BC /* Carousel */,
 				988B749F29851A8500CC18BC /* AppDelegate.swift */,
 				988B74A129851A8500CC18BC /* SceneDelegate.swift */,
@@ -136,6 +140,14 @@
 				988B74CF29851E6C00CC18BC /* CarouselViewController.swift */,
 			);
 			path = Carousel;
+			sourceTree = "<group>";
+		};
+		988B74D5298526F400CC18BC /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				988B74D2298526DC00CC18BC /* StackLinkedList.swift */,
+			);
+			path = DataStructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +283,7 @@
 			files = (
 				988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */,
 				988B74A429851A8500CC18BC /* ViewController.swift in Sources */,
+				988B74D3298526DC00CC18BC /* StackLinkedList.swift in Sources */,
 				988B74A029851A8500CC18BC /* AppDelegate.swift in Sources */,
 				988B74A229851A8500CC18BC /* SceneDelegate.swift in Sources */,
 			);
@@ -281,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988B74B729851A8700CC18BC /* UI_ArchiveTests.swift in Sources */,
+				988B74D4298526DC00CC18BC /* StackLinkedList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
