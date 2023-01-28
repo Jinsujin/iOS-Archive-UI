@@ -10,7 +10,7 @@ class UI_ArchiveTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testStack_whenPushItems() throws {
         var stack = StackLinkedList<Int>()
         stack.push(data: 1)
@@ -53,4 +53,19 @@ class UI_ArchiveTests: XCTestCase {
         XCTAssertNil(popItem3)
     }
     
+    func testStack_initializedArray() throws {
+        let stack: StackLinkedList<Int> = [1,2,3]
+        let peekItem = stack.peek()
+        XCTAssertEqual(3, peekItem)
+    }
+    
+    func testStack_initializeByArray() throws {
+        let array: [Int] = [1, 2, 3]
+        let stack = StackLinkedList<Int>(array)
+        let peekItem = stack.peek()
+        XCTAssertEqual(3, peekItem)
+        
+        let count = stack.getCount()
+        XCTAssertEqual(array.count, count)
+    }
 }
