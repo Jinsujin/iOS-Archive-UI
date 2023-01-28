@@ -16,6 +16,7 @@
 		988B74B729851A8700CC18BC /* UI_ArchiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74B629851A8700CC18BC /* UI_ArchiveTests.swift */; };
 		988B74C129851A8700CC18BC /* UI_ArchiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74C029851A8700CC18BC /* UI_ArchiveUITests.swift */; };
 		988B74C329851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */; };
+		988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74CF29851E6C00CC18BC /* CarouselViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		988B74BC29851A8700CC18BC /* UI-ArchiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UI-ArchiveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		988B74C029851A8700CC18BC /* UI_ArchiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ArchiveUITests.swift; sourceTree = "<group>"; };
 		988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ArchiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		988B74CF29851E6C00CC18BC /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		988B749E29851A8500CC18BC /* UI-Archive */ = {
 			isa = PBXGroup;
 			children = (
+				988B74D129851F3800CC18BC /* Carousel */,
 				988B749F29851A8500CC18BC /* AppDelegate.swift */,
 				988B74A129851A8500CC18BC /* SceneDelegate.swift */,
 				988B74A329851A8500CC18BC /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */,
 			);
 			path = "UI-ArchiveUITests";
+			sourceTree = "<group>";
+		};
+		988B74D129851F3800CC18BC /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				988B74CF29851E6C00CC18BC /* CarouselViewController.swift */,
+			);
+			path = Carousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */,
 				988B74A429851A8500CC18BC /* ViewController.swift in Sources */,
 				988B74A029851A8500CC18BC /* AppDelegate.swift in Sources */,
 				988B74A229851A8500CC18BC /* SceneDelegate.swift in Sources */,
