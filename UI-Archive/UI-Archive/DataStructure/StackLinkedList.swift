@@ -93,6 +93,6 @@ struct NodeIterator<T>: IteratorProtocol {
 extension StackLinkedList: Sequence {
     typealias Iterator = NodeIterator<T>
     func makeIterator() -> Iterator {
-        return NodeIterator<T>(head: head)
+        return Iterator(head: head)
     }
 }
