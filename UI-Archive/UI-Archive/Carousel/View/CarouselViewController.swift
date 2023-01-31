@@ -17,9 +17,6 @@ class CarouselViewController: UIViewController {
         }), for: .touchUpInside)
         
         nextButton.addAction(UIAction(handler: { [weak self] action in
-            // 1. 리스트에서 현재 데이터 위치 +1 에 있는 데이터를 가져온다
-            // 2-1. 데이터가 없으면: 동작 x (return)
-            // 2-2. 데이터가 있으면: 해당 데이터로 현재의 화면 갱신
             self?.updateContentImage(by: self?.viewModel.nextItem())
         }), for: .touchUpInside)
     }

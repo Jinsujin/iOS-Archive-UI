@@ -35,7 +35,6 @@ struct CarouselList<T> {
     private var count: Int = 0
     private var head: Node<T>?
     private var tail: Node<T>?
-    private var current: Node<T>?
     
     func isEmpty() -> Bool {
         return count == 0
