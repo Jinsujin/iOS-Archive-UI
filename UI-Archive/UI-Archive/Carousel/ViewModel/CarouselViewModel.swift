@@ -8,15 +8,8 @@ struct CarouselViewModel {
     private var currentNode: Node<ImageName>?
     
     mutating func prepare() {
-        let imageNames = ["1", "2", "3", "4"]
-        for name in imageNames {
-            imageNameList.append(name)
-        }
+        imageNameList = ["1", "2", "3", "4"]
         currentNode = imageNameList.peekFirst()
-    }
-    
-    func currentImageName() -> ImageName {
-        return currentNode?.data ?? ""
     }
     
     mutating func nextItem() -> ImageName? {
@@ -25,15 +18,19 @@ struct CarouselViewModel {
         return data
     }
     
-    // TODO: test
     mutating func prevItem() -> ImageName? {
         let data = currentNode?.prev?.data
         currentNode = currentNode?.prev
         return data
     }
+    
+    func currentImageName() -> ImageName {
+        return currentNode?.data ?? ""
+    }
 }
 
 
+// MARK: - CarouselList
 struct CarouselList<T> {
     private var count: Int = 0
     private var head: Node<T>?
@@ -56,9 +53,10 @@ struct CarouselList<T> {
             tail = newNode
             return
         }
-        
+        head?.prev = newNode
         tail?.next = newNode
         newNode.next = head
+        newNode.prev = tail
         head = newNode
     }
     
@@ -68,11 +66,15 @@ struct CarouselList<T> {
         if (head == nil && tail == nil) {
             head = newNode
             tail = newNode
+            newNode.prev = newNode
+            newNode.next = newNode
             return
         }
+        newNode.next = head
+        newNode.prev = tail
         tail?.next = newNode
         tail = newNode
-        newNode.next = head
+        head?.prev = tail
     }
     
     func printAll() {
@@ -83,11 +85,29 @@ struct CarouselList<T> {
         } while (currentNode !== head)
     }
     
+    func printReverse() {
+        var currentNode = tail
+        repeat {
+            print("→", currentNode?.data)
+            currentNode = currentNode?.prev
+        } while (currentNode !== tail)
+    }
+    
     func peekLask() -> Node<T>? {
         return tail
     }
     
     func peekFirst() -> Node<T>? {
         return head
+    }
+}
+
+extension CarouselList: ExpressibleByArrayLiteral {
+    typealias ArrayLiteralElement = T
+    
+    public init(arrayLiteral elements: ArrayLiteralElement...) {
+        for el in elements {
+            append(el)
+        }
     }
 }

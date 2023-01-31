@@ -22,9 +22,10 @@ struct CircularLinkedList<T> {
             tail = newNode
             return
         }
-        
+        head?.prev = newNode
         tail?.next = newNode
         newNode.next = head
+        newNode.prev = tail
         head = newNode
     }
     
@@ -34,11 +35,15 @@ struct CircularLinkedList<T> {
         if (head == nil && tail == nil) {
             head = newNode
             tail = newNode
+            newNode.prev = newNode
+            newNode.next = newNode
             return
         }
+        newNode.next = head
+        newNode.prev = tail
         tail?.next = newNode
         tail = newNode
-        newNode.next = head
+        head?.prev = tail
     }
     
     func printAll() {
@@ -47,6 +52,14 @@ struct CircularLinkedList<T> {
             print("→", currentNode?.data)
             currentNode = currentNode?.next
         } while (currentNode !== head)
+    }
+    
+    func printReverse() {
+        var currentNode = tail
+        repeat {
+            print("→", currentNode?.data)
+            currentNode = currentNode?.prev
+        } while (currentNode !== tail)
     }
     
     func peekLask() -> T? {

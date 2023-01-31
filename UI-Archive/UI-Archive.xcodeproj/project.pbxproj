@@ -149,9 +149,8 @@
 		988B74D129851F3800CC18BC /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				98E165202988FCF30068D2F3 /* CarouselViewModel.swift */,
-				988B74CF29851E6C00CC18BC /* CarouselViewController.swift */,
-				98E165182988E29B0068D2F3 /* CarouselSlideViewController.swift */,
+				98E16522298917A70068D2F3 /* ViewModel */,
+				98E16523298917B40068D2F3 /* View */,
 				98350F3E298650F80052FCA0 /* ImageAssets.xcassets */,
 			);
 			path = Carousel;
@@ -165,6 +164,23 @@
 				98E1651A2988E8880068D2F3 /* LinkedList.swift */,
 			);
 			path = DataStructure;
+			sourceTree = "<group>";
+		};
+		98E16522298917A70068D2F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98E165202988FCF30068D2F3 /* CarouselViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		98E16523298917B40068D2F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				988B74CF29851E6C00CC18BC /* CarouselViewController.swift */,
+				98E165182988E29B0068D2F3 /* CarouselSlideViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

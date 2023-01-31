@@ -30,7 +30,6 @@ class UI_ArchiveTests: XCTestCase {
 
     func testStack_push_pop() throws {
         var stack = StackLinkedList<Int>()
-        
         let data1 = 1
         let data2 = 2
         let dataCount = 2
@@ -103,9 +102,11 @@ class UI_ArchiveTests: XCTestCase {
         XCTAssertEqual(insertData.first!, firstData)
     }
     
+    
     func testLinkedList_insertFront() throws {
         var list = CircularLinkedList<String>()
-        let insertData = ["1", "2"]
+        
+        let insertData = ["1", "2", "3"]
         for d in insertData {
             list.insertFront(d)
         }
@@ -120,6 +121,26 @@ class UI_ArchiveTests: XCTestCase {
         XCTAssertEqual(insertData.last!, firstData)
     }
     
+    func testLinkedList_insertFront_whenExistData() throws {
+        var list = CircularLinkedList<String>()
+        list.append("0")
+        
+        let insertData = ["1", "2"]
+        for d in insertData {
+            list.insertFront(d)
+        }
+        
+        let resultCount = list.getCount()
+        XCTAssertEqual(insertData.count + 1, resultCount)
+        
+        let lastData = list.peekLask()
+        XCTAssertEqual("0", lastData)
+        
+        let firstData = list.peekFirst()
+        XCTAssertEqual(insertData.last!, firstData)
+    }
+    
+    
     func testLinkedList_printAll() throws {
         var list = CircularLinkedList<String>()
         let insertData = ["1", "2", "3"]
@@ -130,6 +151,7 @@ class UI_ArchiveTests: XCTestCase {
         let resultCount = list.getCount()
         XCTAssertEqual(insertData.count, resultCount)
         
-        list.printAll()
+        let firstData = list.peekFirst()
+        XCTAssertEqual(insertData.first!, firstData)
     }
 }

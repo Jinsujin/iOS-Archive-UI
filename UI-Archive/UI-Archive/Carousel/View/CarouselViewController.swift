@@ -5,40 +5,30 @@ class CarouselViewController: UIViewController {
     
     private var viewModel = CarouselViewModel()
     
-    private let contentView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .orange
-        return imageView
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupViews()
         viewModel.prepare()
-        
-        let firstImageName = viewModel.currentImageName()
-        contentView.image = UIImage(named: firstImageName)
+        updateContentImage(by: viewModel.currentImageName())
         
         prevButton.addAction(UIAction(handler: { [weak self] action in
-            print("touch prev")
-            let prevImage = UIImage(named: "2")
-            self?.contentView.image = prevImage
+            self?.updateContentImage(by: self?.viewModel.prevItem())
         }), for: .touchUpInside)
         
         nextButton.addAction(UIAction(handler: { [weak self] action in
             // 1. 리스트에서 현재 데이터 위치 +1 에 있는 데이터를 가져온다
             // 2-1. 데이터가 없으면: 동작 x (return)
             // 2-2. 데이터가 있으면: 해당 데이터로 현재의 화면 갱신
-            guard let imageName = self?.viewModel.nextItem() else {
-                return
-            }
-            print(imageName)
-            
-            let prevImage = UIImage(named: imageName)
-            self?.contentView.image = prevImage
+            self?.updateContentImage(by: self?.viewModel.nextItem())
         }), for: .touchUpInside)
+    }
+        
+    private func updateContentImage(by name: String?) {
+        guard let name = name else {
+            return
+        }
+        contentView.image = UIImage(named: name)
     }
     
     private func setupViews() {
@@ -65,6 +55,13 @@ class CarouselViewController: UIViewController {
             nextButton.leadingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40)
         ])
     }
+    
+    private let contentView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.backgroundColor = .orange
+        return imageView
+    }()
     
     private let prevButton: UIButton = {
         let btn = UIButton()
