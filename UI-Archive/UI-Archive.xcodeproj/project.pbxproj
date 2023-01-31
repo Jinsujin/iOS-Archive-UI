@@ -20,6 +20,7 @@
 		988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74CF29851E6C00CC18BC /* CarouselViewController.swift */; };
 		988B74D3298526DC00CC18BC /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74D2298526DC00CC18BC /* StackLinkedList.swift */; };
 		988B74D4298526DC00CC18BC /* StackLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988B74D2298526DC00CC18BC /* StackLinkedList.swift */; };
+		98E165192988E29B0068D2F3 /* CarouselSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E165182988E29B0068D2F3 /* CarouselSlideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		988B74C229851A8700CC18BC /* UI_ArchiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_ArchiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		988B74CF29851E6C00CC18BC /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		988B74D2298526DC00CC18BC /* StackLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLinkedList.swift; sourceTree = "<group>"; };
+		98E165182988E29B0068D2F3 /* CarouselSlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSlideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				988B74CF29851E6C00CC18BC /* CarouselViewController.swift */,
+				98E165182988E29B0068D2F3 /* CarouselSlideViewController.swift */,
 				98350F3E298650F80052FCA0 /* ImageAssets.xcassets */,
 			);
 			path = Carousel;
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E165192988E29B0068D2F3 /* CarouselSlideViewController.swift in Sources */,
 				988B74D029851E6C00CC18BC /* CarouselViewController.swift in Sources */,
 				988B74A429851A8500CC18BC /* ViewController.swift in Sources */,
 				988B74D3298526DC00CC18BC /* StackLinkedList.swift in Sources */,

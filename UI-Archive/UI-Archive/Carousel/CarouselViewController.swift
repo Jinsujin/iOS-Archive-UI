@@ -1,66 +1,58 @@
 import UIKit
 
 class CarouselViewController: UIViewController {
-
-    private let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        return scrollView
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupViews()
+        
+        prevButton.addAction(UIAction(handler: { action in
+            print("touch prev")
+        }), for: .touchUpInside)
+        
+        nextButton.addAction(UIAction(handler: { action in
+            print("touch next")
+        }), for: .touchUpInside)
     }
     
     private func setupViews() {
-        let imageView1 = UIImageView(image: UIImage(named: "1"))
-        let imageView2 = UIImageView(image: UIImage(named: "2"))
-        imageView1.translatesAutoresizingMaskIntoConstraints = false
-        imageView2.translatesAutoresizingMaskIntoConstraints = false
-        
-        let stackView = UIStackView(arrangedSubviews: [
-            imageView1,
-            imageView2
-        ])
-        stackView.axis = .horizontal
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(scrollView)
-        scrollView.backgroundColor = .orange
-        scrollView.addSubview(stackView)
+        let contentView = UIImageView(image: UIImage(named: "1"))
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(contentView)
+        contentView.backgroundColor = .orange
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 200)
+            contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 200)
         ])
         
+        view.addSubview(prevButton)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor)
+            prevButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            prevButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40)
         ])
         
-        let screenWidth = UIScreen.main.bounds.width // 414
+        view.addSubview(nextButton)
         NSLayoutConstraint.activate([
-            imageView1.widthAnchor.constraint(equalToConstant: screenWidth),
-            imageView1.heightAnchor.constraint(equalToConstant: 200),
-            
-            imageView2.widthAnchor.constraint(equalTo: imageView1.widthAnchor),
-            imageView2.heightAnchor.constraint(equalTo: imageView1.heightAnchor)
+            nextButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            nextButton.leadingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40)
         ])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // contentSize: (w 828.0, h 200.0)
-        // frame: (0.0, 0.0, 414.0, 200.0)
-        print("//스크롤 이동전", scrollView.contentOffset)
-        scrollView.setContentOffset(CGPoint(x: 414, y: 0), animated: false)
-        print("스크롤 이동후//", scrollView.contentOffset) // 414
-    }
+    private let prevButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "arrowtriangle.left.fill"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    private let nextButton: UIButton = {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "arrowtriangle.right.fill"), for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
 }
