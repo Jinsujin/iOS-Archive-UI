@@ -1,17 +1,5 @@
 import Foundation
 
-class Node<T> {
-    var data: T
-    var next: Node?
-    var prev: Node?
-    
-    init(data: T) {
-        next = nil
-        prev = nil
-        self.data = data
-    }
-}
-
 struct StackLinkedList<T> {
     private var head: Node<T>?
     private var count: Int = 0

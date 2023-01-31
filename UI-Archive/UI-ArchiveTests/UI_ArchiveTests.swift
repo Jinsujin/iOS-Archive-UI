@@ -68,4 +68,68 @@ class UI_ArchiveTests: XCTestCase {
         let count = stack.getCount()
         XCTAssertEqual(array.count, count)
     }
+    
+    func testLinkedList_peekLask_whenNoData_expectNil() throws {
+        let list = CircularLinkedList<String>()
+        let result = list.peekLask()
+        XCTAssertNil(result)
+    }
+    
+    func testLinkedList_appendOne() throws {
+        var list = CircularLinkedList<String>()
+        let insertData = "1"
+        list.append(insertData)
+        let resultCount = list.getCount()
+        XCTAssertEqual(1, resultCount)
+        
+        let lastData = list.peekLask()
+        XCTAssertEqual(insertData, lastData)
+    }
+    
+    func testLinkedList_appendMultiple() throws {
+        var list = CircularLinkedList<String>()
+        let insertData = ["1", "2", "3"]
+        for d in insertData {
+            list.append(d)
+        }
+        
+        let resultCount = list.getCount()
+        XCTAssertEqual(insertData.count, resultCount)
+        
+        let lastData = list.peekLask()
+        XCTAssertEqual(insertData.last!, lastData)
+        
+        let firstData = list.peekFirst()
+        XCTAssertEqual(insertData.first!, firstData)
+    }
+    
+    func testLinkedList_insertFront() throws {
+        var list = CircularLinkedList<String>()
+        let insertData = ["1", "2"]
+        for d in insertData {
+            list.insertFront(d)
+        }
+        
+        let resultCount = list.getCount()
+        XCTAssertEqual(insertData.count, resultCount)
+        
+        let lastData = list.peekLask()
+        XCTAssertEqual(insertData.first!, lastData)
+        
+        let firstData = list.peekFirst()
+        XCTAssertEqual(insertData.last!, firstData)
+    }
+    
+    func testLinkedList_printAll() throws {
+        var list = CircularLinkedList<String>()
+        let insertData = ["1", "2", "3"]
+        for d in insertData {
+            list.append(d)
+        }
+        
+        let resultCount = list.getCount()
+        XCTAssertEqual(insertData.count, resultCount)
+        
+        list.printAll()
+    }
 }
