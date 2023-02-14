@@ -4,8 +4,14 @@ struct UserView: View {
     var followingList: [UserID]
     
     var body: some View {
-        List(followingList, id: \.self) { id in
-            FollowingCell(userID: id)
+        List {
+            Section {
+                ForEach(followingList, id: \.self) { user in
+                    Text(user)
+                }
+            } header: {
+                Text("Follow List")
+            }
         }
     }
 }
