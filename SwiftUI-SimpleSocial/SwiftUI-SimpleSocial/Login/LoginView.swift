@@ -12,7 +12,7 @@ struct LoginView: View {
         NavigationView {
             let userIDs: [String] = socialGraph .map { $0.key }
             List(userIDs, id: \.self) { key in
-                LoginCell(userID: key)
+                LoginCellView(userID: key, followingList: socialGraph[key] ?? [])
             }
             .navigationTitle("로그인 유저 선택")
             .navigationBarTitleDisplayMode(.inline)
@@ -20,11 +20,12 @@ struct LoginView: View {
     }
 }
 
-struct LoginCell: View {
-    var userID: String
+struct LoginCellView: View {
+    var userID: UserID
+    var followingList: [UserID]
     
     var body: some View {
-        NavigationLink(destination: HomeView(userID: userID)) {
+        NavigationLink(destination: HomeView(userID: userID, followingList: followingList)) {
             HStack {
                 Image(systemName: "person")
                 Text(userID)

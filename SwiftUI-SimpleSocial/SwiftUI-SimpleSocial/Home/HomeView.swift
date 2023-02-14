@@ -2,11 +2,12 @@ import SwiftUI
 
 struct HomeView: View {
     var userID: String
+    var followingList: [UserID]
     
     var body: some View {
         NavigationView {
             TabView {
-                UserView()
+                UserView(followingList: followingList)
                     .tabItem {
                         Label("Home", systemImage: "person")
                     }
@@ -24,6 +25,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(userID: "UserID")
+        HomeView(userID: "UserID", followingList: ["Follow ID"])
     }
 }
