@@ -1,10 +1,3 @@
-//
-//  SwiftUI_SimpleSocialUITests.swift
-//  SwiftUI-SimpleSocialUITests
-//
-//  Created by Sujin Jin on 2023/02/14.
-//
-
 import XCTest
 
 final class SwiftUI_SimpleSocialUITests: XCTestCase {

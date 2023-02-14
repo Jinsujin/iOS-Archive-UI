@@ -22,7 +22,7 @@ final class SocialSystemTests: XCTestCase {
         XCTAssertEqual(2, result)
     }
     
-    func test_afterUnFollow_compareFollowingCount() throws {
+    func test_cancelFollow_compareFollowingCount() throws {
         sut.follow("A", "B")
         sut.unfollow("A", "B")
         let result = sut.followingCount("A")
