@@ -20,6 +20,7 @@
 		98E6CB58299BA40100DC50C0 /* SocialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB57299BA40100DC50C0 /* SocialSystem.swift */; };
 		98E6CB5A299BA8FB00DC50C0 /* SocialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB57299BA40100DC50C0 /* SocialSystem.swift */; };
 		98E6CB5D299BA93300DC50C0 /* SocialSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */; };
+		98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB60299BB4E400DC50C0 /* NoDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		98E6CB54299B955400DC50C0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		98E6CB57299BA40100DC50C0 /* SocialSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSystem.swift; sourceTree = "<group>"; };
 		98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialSystemTests.swift; sourceTree = "<group>"; };
+		98E6CB60299BB4E400DC50C0 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		98E6CB1F299B66E800DC50C0 /* SwiftUI-SimpleSocial */ = {
 			isa = PBXGroup;
 			children = (
+				98E6CB62299BB50A00DC50C0 /* Common */,
 				98E6CB56299BA3ED00DC50C0 /* Logic */,
 				98E6CB53299B954700DC50C0 /* Search */,
 				98E6CB50299B951A00DC50C0 /* User */,
@@ -181,6 +184,14 @@
 				98E6CB57299BA40100DC50C0 /* SocialSystem.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		98E6CB62299BB50A00DC50C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB60299BB4E400DC50C0 /* NoDataView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 				98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */,
 				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
 				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,
+				98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */,
 				98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */,
 				98E6CB58299BA40100DC50C0 /* SocialSystem.swift in Sources */,
 			);

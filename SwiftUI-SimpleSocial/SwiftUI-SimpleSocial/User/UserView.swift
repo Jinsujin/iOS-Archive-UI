@@ -6,8 +6,12 @@ struct UserView: View {
     var body: some View {
         List {
             Section {
-                ForEach(followingList, id: \.self) { user in
-                    Text(user)
+                if (followingList.isEmpty) {
+                    NoDataView()
+                } else {
+                    ForEach(followingList, id: \.self) { id in
+                        FollowingCell(userID: id)
+                    }
                 }
             } header: {
                 Text("Follow List")
@@ -20,7 +24,14 @@ struct FollowingCell: View {
     var userID: UserID
     
     var body: some View {
-        Text(userID)
+        HStack {
+            Text(userID)
+            Spacer()
+            Button(action: { print("touched Button") }) {
+                Text("팔로우 취소")
+            }
+            .buttonStyle(BorderlessButtonStyle())
+        }
     }
 }
 
