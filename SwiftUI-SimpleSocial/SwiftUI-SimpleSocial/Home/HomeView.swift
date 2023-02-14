@@ -3,12 +3,20 @@ import SwiftUI
 struct HomeView: View {
     var userID: String
     var followingList: [UserID]
+    private let system = SocialSystem()
+    
+    func unFollow(from: UserID, to: UserID) {
+        print("unFollow, \(from) -> \(to)")
+        // TODO: - call system.unfollow
+//        system.unfollow(from, to)
+    }
     
     var body: some View {
         NavigationView {
             TabView {
-                UserView(followingList: followingList)
-                    .tabItem {
+                UserView(followingList: followingList) { to in
+                    unFollow(from: userID, to: to)
+                    }.tabItem {
                         Label("Home", systemImage: "person")
                     }
                 SearchView()

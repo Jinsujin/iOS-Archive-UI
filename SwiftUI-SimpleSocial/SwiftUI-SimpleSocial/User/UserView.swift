@@ -2,6 +2,7 @@ import SwiftUI
 
 struct UserView: View {
     var followingList: [UserID]
+    var unFollowAction: (UserID) -> Void
     
     var body: some View {
         List {
@@ -10,7 +11,9 @@ struct UserView: View {
                     NoDataView()
                 } else {
                     ForEach(followingList, id: \.self) { id in
-                        FollowingCell(userID: id)
+                        FollowingCell(userID: id) {
+                            unFollowAction(id)
+                        }
                     }
                 }
             } header: {
@@ -22,12 +25,13 @@ struct UserView: View {
 
 struct FollowingCell: View {
     var userID: UserID
+    let cancelAction: () -> Void
     
     var body: some View {
         HStack {
             Text(userID)
             Spacer()
-            Button(action: { print("touched Button") }) {
+            Button(action: { cancelAction() }) {
                 Text("팔로우 취소")
             }
             .buttonStyle(BorderlessButtonStyle())
@@ -37,6 +41,6 @@ struct FollowingCell: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(followingList: ["userID"])
+        UserView(followingList: ["userID"], unFollowAction: { _ in })
     }
 }
