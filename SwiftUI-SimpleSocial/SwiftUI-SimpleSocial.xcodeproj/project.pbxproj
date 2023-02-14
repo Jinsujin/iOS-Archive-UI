@@ -14,6 +14,10 @@
 		98E6CB32299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB31299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift */; };
 		98E6CB3C299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB3B299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift */; };
 		98E6CB3E299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB3D299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift */; };
+		98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB4A299B8F4100DC50C0 /* HomeView.swift */; };
+		98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB4E299B8FDD00DC50C0 /* LoginView.swift */; };
+		98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB51299B952B00DC50C0 /* UserView.swift */; };
+		98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB54299B955400DC50C0 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		98E6CB37299B66EA00DC50C0 /* SwiftUI-SimpleSocialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SimpleSocialUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E6CB3B299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialUITests.swift; sourceTree = "<group>"; };
 		98E6CB3D299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		98E6CB4A299B8F4100DC50C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		98E6CB4E299B8FDD00DC50C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		98E6CB51299B952B00DC50C0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		98E6CB54299B955400DC50C0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,10 @@
 		98E6CB1F299B66E800DC50C0 /* SwiftUI-SimpleSocial */ = {
 			isa = PBXGroup;
 			children = (
+				98E6CB53299B954700DC50C0 /* Search */,
+				98E6CB50299B951A00DC50C0 /* User */,
+				98E6CB4D299B8FAE00DC50C0 /* Login */,
+				98E6CB4C299B8F9800DC50C0 /* Home */,
 				98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */,
 				98E6CB22299B66E800DC50C0 /* ContentView.swift */,
 				98E6CB24299B66EA00DC50C0 /* Assets.xcassets */,
@@ -125,6 +137,38 @@
 				98E6CB3D299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift */,
 			);
 			path = "SwiftUI-SimpleSocialUITests";
+			sourceTree = "<group>";
+		};
+		98E6CB4C299B8F9800DC50C0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB4A299B8F4100DC50C0 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		98E6CB4D299B8FAE00DC50C0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB4E299B8FDD00DC50C0 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		98E6CB50299B951A00DC50C0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB51299B952B00DC50C0 /* UserView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		98E6CB53299B954700DC50C0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB54299B955400DC50C0 /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +301,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */,
 				98E6CB23299B66E800DC50C0 /* ContentView.swift in Sources */,
+				98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */,
+				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
+				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,
 				98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

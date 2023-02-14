@@ -1,21 +1,8 @@
-//
-//  ContentView.swift
-//  SwiftUI-SimpleSocial
-//
-//  Created by Sujin Jin on 2023/02/14.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        LoginView()
     }
 }
 
