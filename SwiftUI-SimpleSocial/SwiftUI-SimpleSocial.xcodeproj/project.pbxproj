@@ -11,7 +11,6 @@
 		98E6CB23299B66E800DC50C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB22299B66E800DC50C0 /* ContentView.swift */; };
 		98E6CB25299B66EA00DC50C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB24299B66EA00DC50C0 /* Assets.xcassets */; };
 		98E6CB28299B66EA00DC50C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB27299B66EA00DC50C0 /* Preview Assets.xcassets */; };
-		98E6CB32299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB31299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift */; };
 		98E6CB3C299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB3B299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift */; };
 		98E6CB3E299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB3D299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift */; };
 		98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB4A299B8F4100DC50C0 /* HomeView.swift */; };
@@ -19,6 +18,8 @@
 		98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB51299B952B00DC50C0 /* UserView.swift */; };
 		98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB54299B955400DC50C0 /* SearchView.swift */; };
 		98E6CB58299BA40100DC50C0 /* SocialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB57299BA40100DC50C0 /* SocialSystem.swift */; };
+		98E6CB5A299BA8FB00DC50C0 /* SocialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB57299BA40100DC50C0 /* SocialSystem.swift */; };
+		98E6CB5D299BA93300DC50C0 /* SocialSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		98E6CB24299B66EA00DC50C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E6CB27299B66EA00DC50C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98E6CB2D299B66EA00DC50C0 /* SwiftUI-SimpleSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SimpleSocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		98E6CB31299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialTests.swift; sourceTree = "<group>"; };
 		98E6CB37299B66EA00DC50C0 /* SwiftUI-SimpleSocialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SimpleSocialUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E6CB3B299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialUITests.swift; sourceTree = "<group>"; };
 		98E6CB3D299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -54,6 +54,7 @@
 		98E6CB51299B952B00DC50C0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		98E6CB54299B955400DC50C0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		98E6CB57299BA40100DC50C0 /* SocialSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSystem.swift; sourceTree = "<group>"; };
+		98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialSystemTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +129,7 @@
 		98E6CB30299B66EA00DC50C0 /* SwiftUI-SimpleSocialTests */ = {
 			isa = PBXGroup;
 			children = (
-				98E6CB31299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift */,
+				98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */,
 			);
 			path = "SwiftUI-SimpleSocialTests";
 			sourceTree = "<group>";
@@ -326,7 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98E6CB32299B66EA00DC50C0 /* SwiftUI_SimpleSocialTests.swift in Sources */,
+				98E6CB5A299BA8FB00DC50C0 /* SocialSystem.swift in Sources */,
+				98E6CB5D299BA93300DC50C0 /* SocialSystemTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

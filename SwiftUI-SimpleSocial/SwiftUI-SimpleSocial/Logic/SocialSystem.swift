@@ -47,6 +47,7 @@ struct User {
 class SocialSystem {
     private(set) var graph: Dictionary<UserID, User> = [:]
     
+    @discardableResult
     func follow(_ from: UserID, _ to: UserID) -> Bool {
         if var existUser = graph[from] {
             if (existUser.isFollow(to)) {
@@ -64,6 +65,7 @@ class SocialSystem {
         return true
     }
     
+    @discardableResult
     func unfollow(_ from: UserID, _ to: UserID) -> Bool {
         guard var fromUser = graph[from],
               var toUser = graph[to] else {
@@ -85,7 +87,7 @@ class SocialSystem {
         return 0
     }
     
-    func follwingCount(_ userId: UserID) -> Int {
+    func followingCount(_ userId: UserID) -> Int {
         if let existUser = graph[userId] {
             return existUser.followingCount
         }
@@ -112,6 +114,7 @@ class SocialSystem {
         return []
     }
     
+    // MARK: - private functions
     private func plusFollowing(_ to: UserID) {
         if var existUser = graph[to] {
             existUser.plusFollow()

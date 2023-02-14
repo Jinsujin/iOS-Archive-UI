@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    private let socialGraph = [
+    private let socialGraph: [UserID: [UserID]] = [
         "A": ["B", "C"],
         "B": [],
         "C": ["B"]
