@@ -47,6 +47,10 @@ struct User {
 class SocialSystem {
     private(set) var graph: Dictionary<UserID, User> = [:]
     
+    init(with graph: Dictionary<UserID, User> = [:]) {
+        self.graph = graph
+    }
+    
     @discardableResult
     func follow(_ from: UserID, _ to: UserID) -> Bool {
         if var existUser = graph[from] {

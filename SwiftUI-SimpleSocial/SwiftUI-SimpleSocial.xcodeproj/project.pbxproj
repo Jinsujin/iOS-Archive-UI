@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */; };
-		98E6CB23299B66E800DC50C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB22299B66E800DC50C0 /* ContentView.swift */; };
 		98E6CB25299B66EA00DC50C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB24299B66EA00DC50C0 /* Assets.xcassets */; };
 		98E6CB28299B66EA00DC50C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB27299B66EA00DC50C0 /* Preview Assets.xcassets */; };
 		98E6CB3C299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB3B299B66EA00DC50C0 /* SwiftUI_SimpleSocialUITests.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		98E6CB1D299B66E800DC50C0 /* SwiftUI-SimpleSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-SimpleSocial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialApp.swift; sourceTree = "<group>"; };
-		98E6CB22299B66E800DC50C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98E6CB24299B66EA00DC50C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E6CB27299B66EA00DC50C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98E6CB2D299B66EA00DC50C0 /* SwiftUI-SimpleSocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-SimpleSocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +112,6 @@
 				98E6CB4D299B8FAE00DC50C0 /* Login */,
 				98E6CB4C299B8F9800DC50C0 /* Home */,
 				98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */,
-				98E6CB22299B66E800DC50C0 /* ContentView.swift */,
 				98E6CB24299B66EA00DC50C0 /* Assets.xcassets */,
 				98E6CB26299B66EA00DC50C0 /* Preview Content */,
 			);
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */,
-				98E6CB23299B66E800DC50C0 /* ContentView.swift in Sources */,
 				98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */,
 				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
 				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,

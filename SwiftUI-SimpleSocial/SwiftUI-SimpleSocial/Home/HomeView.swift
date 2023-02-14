@@ -3,7 +3,6 @@ import SwiftUI
 struct HomeView: View {
     var userID: String
     var followingList: [UserID]
-    private let system = SocialSystem()
     
     func unFollow(from: UserID, to: UserID) {
         print("unFollow, \(from) -> \(to)")

@@ -2,17 +2,14 @@ import SwiftUI
 
 struct LoginView: View {
     
-    private let socialGraph: [UserID: [UserID]] = [
-        "A": ["B", "C"],
-        "B": [],
-        "C": ["B"]
-    ]
-
+    let system: SocialSystem
+    
     var body: some View {
         NavigationView {
-            let userIDs: [String] = socialGraph .map { $0.key }
+            let userIDs: [UserID] = system.graph.map { $0.key }
+            
             List(userIDs, id: \.self) { key in
-                LoginCellView(userID: key, followingList: socialGraph[key] ?? [])
+                LoginCellView(userID: key, followingList: system.graph[key]?.followingList ?? [])
             }
             .navigationTitle("로그인 유저 선택")
             .navigationBarTitleDisplayMode(.inline)
@@ -36,7 +33,9 @@ struct LoginCellView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(
+            system: SocialSystem(with: DummyGenerator().make())
+        )
     }
 }
 
