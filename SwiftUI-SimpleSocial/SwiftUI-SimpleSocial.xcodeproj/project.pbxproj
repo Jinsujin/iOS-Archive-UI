@@ -22,6 +22,9 @@
 		98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB60299BB4E400DC50C0 /* NoDataView.swift */; };
 		98E6CB64299BF1D000DC50C0 /* DummyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */; };
 		98E6CB66299CFBFA00DC50C0 /* ActionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */; };
+		98E6CB69299CFEF500DC50C0 /* AnyCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB68299CFEF500DC50C0 /* AnyCompare.swift */; };
+		98E6CB6B299CFF1B00DC50C0 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB6A299CFF1B00DC50C0 /* Store.swift */; };
+		98E6CB6D299CFF4A00DC50C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB6C299CFF4A00DC50C0 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		98E6CB60299BB4E400DC50C0 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGenerator.swift; sourceTree = "<group>"; };
 		98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProcessor.swift; sourceTree = "<group>"; };
+		98E6CB68299CFEF500DC50C0 /* AnyCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCompare.swift; sourceTree = "<group>"; };
+		98E6CB6A299CFF1B00DC50C0 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		98E6CB6C299CFF4A00DC50C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				98E6CB62299BB50A00DC50C0 /* Common */,
+				98E6CB67299CFEBD00DC50C0 /* Helper */,
 				98E6CB56299BA3ED00DC50C0 /* Logic */,
-				98E6CB53299B954700DC50C0 /* Search */,
-				98E6CB50299B951A00DC50C0 /* User */,
-				98E6CB4D299B8FAE00DC50C0 /* Login */,
-				98E6CB4C299B8F9800DC50C0 /* Home */,
+				98E6CB6E299CFFF400DC50C0 /* View */,
 				98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */,
 				98E6CB24299B66EA00DC50C0 /* Assets.xcassets */,
 				98E6CB26299B66EA00DC50C0 /* Preview Content */,
@@ -182,8 +186,9 @@
 		98E6CB56299BA3ED00DC50C0 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				98E6CB6C299CFF4A00DC50C0 /* User.swift */,
+				98E6CB6A299CFF1B00DC50C0 /* Store.swift */,
 				98E6CB57299BA40100DC50C0 /* SocialSystem.swift */,
-				98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */,
 				98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */,
 			);
 			path = Logic;
@@ -195,6 +200,26 @@
 				98E6CB60299BB4E400DC50C0 /* NoDataView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		98E6CB67299CFEBD00DC50C0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB68299CFEF500DC50C0 /* AnyCompare.swift */,
+				98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		98E6CB6E299CFFF400DC50C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB53299B954700DC50C0 /* Search */,
+				98E6CB50299B951A00DC50C0 /* User */,
+				98E6CB4D299B8FAE00DC50C0 /* Login */,
+				98E6CB4C299B8F9800DC50C0 /* Home */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,10 +354,13 @@
 			files = (
 				98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */,
 				98E6CB66299CFBFA00DC50C0 /* ActionProcessor.swift in Sources */,
+				98E6CB69299CFEF500DC50C0 /* AnyCompare.swift in Sources */,
 				98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */,
 				98E6CB64299BF1D000DC50C0 /* DummyGenerator.swift in Sources */,
 				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
+				98E6CB6B299CFF1B00DC50C0 /* Store.swift in Sources */,
 				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,
+				98E6CB6D299CFF4A00DC50C0 /* User.swift in Sources */,
 				98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */,
 				98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */,
 				98E6CB58299BA40100DC50C0 /* SocialSystem.swift in Sources */,
