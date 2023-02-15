@@ -43,64 +43,75 @@ struct User {
     }
 }
 
+// MARK: - Store ObservableObject
+class Store: ObservableObject {
+    @Published var graph: Dictionary<UserID, User> = [:]
+    
+    init() {
+        self.graph = DummyGenerator().make()
+    }
+}
+
+typealias UserCollection = Dictionary<UserID, User>
+
 // MARK: - FollowSystem class
 class SocialSystem {
-    private(set) var graph: Dictionary<UserID, User> = [:]
+    private(set) var store: Store
     
-    init(with graph: Dictionary<UserID, User> = [:]) {
-        self.graph = graph
+    init(with store: Store) {
+        self.store = store
     }
     
     @discardableResult
     func follow(_ from: UserID, _ to: UserID) -> Bool {
-        if var existUser = graph[from] {
+        if var existUser = store.graph[from] {
             if (existUser.isFollow(to)) {
                 return false
             }
             existUser.follow(to)
-            graph.updateValue(existUser, forKey: from)
+            store.graph.updateValue(existUser, forKey: from)
             plusFollowing(to)
             return true
         }
         var newUser = User()
         newUser.follow(to)
         plusFollowing(to)
-        graph[from] = newUser
+        store.graph[from] = newUser
         return true
     }
     
     @discardableResult
     func unfollow(_ from: UserID, _ to: UserID) -> Bool {
-        guard var fromUser = graph[from],
-              var toUser = graph[to] else {
+        guard var fromUser = store.graph[from],
+              var toUser = store.graph[to] else {
             return false
         }
         if !fromUser.unfollow(to) {
             return false
         }
-        graph.updateValue(fromUser, forKey: from)
+        store.graph.updateValue(fromUser, forKey: from)
         toUser.minusFollow()
-        graph.updateValue(toUser, forKey: to)
+        store.graph.updateValue(toUser, forKey: to)
         return true
     }
 
     func followerCount(_ userId: UserID) -> Int {
-        if let existUser = graph[userId] {
+        if let existUser = store.graph[userId] {
             return existUser.followerCount
         }
         return 0
     }
     
     func followingCount(_ userId: UserID) -> Int {
-        if let existUser = graph[userId] {
+        if let existUser = store.graph[userId] {
             return existUser.followingCount
         }
         return 0
     }
 
     func isMutualFollowing(_ user1Id: UserID, _ user2Id: UserID) -> Bool {
-        if let existUser1 = graph[user1Id],
-           let existUser2 = graph[user2Id],
+        if let existUser1 = store.graph[user1Id],
+           let existUser2 = store.graph[user2Id],
            existUser1.isFollow(user2Id),
            existUser2.isFollow(user1Id) {
             return true
@@ -109,8 +120,8 @@ class SocialSystem {
     }
 
     func commonFollowList(_ user1Id: UserID, _ user2Id: UserID) -> [UserID] {
-        if let existUser1 = graph[user1Id],
-           let existUser2 = graph[user2Id] {
+        if let existUser1 = store.graph[user1Id],
+           let existUser2 = store.graph[user2Id] {
             let user1Set = Set(existUser1.followingList)
             let user2Set = Set(existUser2.followingList)
             return Array(user1Set.intersection(user2Set))
@@ -120,13 +131,13 @@ class SocialSystem {
     
     // MARK: - private functions
     private func plusFollowing(_ to: UserID) {
-        if var existUser = graph[to] {
+        if var existUser = store.graph[to] {
             existUser.plusFollow()
-            graph.updateValue(existUser, forKey: to)
+            store.graph.updateValue(existUser, forKey: to)
             return
         }
         var newUser = User()
         newUser.plusFollow()
-        graph[to] = newUser
+        store.graph[to] = newUser
     }
 }

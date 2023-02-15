@@ -41,6 +41,6 @@ struct FollowingCell: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(followingList: ["userID"], unFollowAction: { _ in })
+        UserView(followingList: ["UserID"], unFollowAction: { _ in })
     }
 }

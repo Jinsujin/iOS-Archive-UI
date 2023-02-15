@@ -2,17 +2,19 @@ import SwiftUI
 
 struct HomeView: View {
     var userID: String
-    var followingList: [UserID]
+    let processor: ActionProcessor
     
     func unFollow(from: UserID, to: UserID) {
         print("unFollow, \(from) -> \(to)")
-        // TODO: - call system.unfollow
-//        system.unfollow(from, to)
+        let result = processor.play(action: .unfollow(from, to))
+        print(result)
     }
     
     var body: some View {
         NavigationView {
             TabView {
+                let followingList = processor.store.graph[userID]?.followingList ?? []
+                
                 UserView(followingList: followingList) { to in
                     unFollow(from: userID, to: to)
                     }.tabItem {
@@ -32,6 +34,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(userID: "UserID", followingList: ["Follow ID"])
+        HomeView(userID: "UserID", processor: ActionProcessor(system: SocialSystem(with: Store())))
     }
 }

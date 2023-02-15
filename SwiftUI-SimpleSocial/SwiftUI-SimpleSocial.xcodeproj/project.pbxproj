@@ -20,6 +20,8 @@
 		98E6CB5A299BA8FB00DC50C0 /* SocialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB57299BA40100DC50C0 /* SocialSystem.swift */; };
 		98E6CB5D299BA93300DC50C0 /* SocialSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */; };
 		98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB60299BB4E400DC50C0 /* NoDataView.swift */; };
+		98E6CB64299BF1D000DC50C0 /* DummyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */; };
+		98E6CB66299CFBFA00DC50C0 /* ActionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		98E6CB57299BA40100DC50C0 /* SocialSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialSystem.swift; sourceTree = "<group>"; };
 		98E6CB5C299BA93300DC50C0 /* SocialSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialSystemTests.swift; sourceTree = "<group>"; };
 		98E6CB60299BB4E400DC50C0 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyGenerator.swift; sourceTree = "<group>"; };
+		98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				98E6CB57299BA40100DC50C0 /* SocialSystem.swift */,
+				98E6CB63299BF1D000DC50C0 /* DummyGenerator.swift */,
+				98E6CB65299CFBFA00DC50C0 /* ActionProcessor.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98E6CB4B299B8F4100DC50C0 /* HomeView.swift in Sources */,
+				98E6CB66299CFBFA00DC50C0 /* ActionProcessor.swift in Sources */,
 				98E6CB52299B952B00DC50C0 /* UserView.swift in Sources */,
+				98E6CB64299BF1D000DC50C0 /* DummyGenerator.swift in Sources */,
 				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
 				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,
 				98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */,

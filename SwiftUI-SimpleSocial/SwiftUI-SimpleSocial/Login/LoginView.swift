@@ -1,28 +1,33 @@
 import SwiftUI
 
 struct LoginView: View {
-    
-    let system: SocialSystem
+    let processor: ActionProcessor
     
     var body: some View {
+        
         NavigationView {
-            let userIDs: [UserID] = system.graph.map { $0.key }
-            
+            let userIDs = processor.store.graph.map{ $0.key }
             List(userIDs, id: \.self) { key in
-                LoginCellView(userID: key, followingList: system.graph[key]?.followingList ?? [])
+                LoginCellView(userID: key, processor: processor)
             }
             .navigationTitle("로그인 유저 선택")
             .navigationBarTitleDisplayMode(.inline)
+        }.onAppear {
+            // TODO: - Test
+            let result = processor.play(action: .isMutualFollowing("A", "C"))
+            print("LoginView isMutualFollowing = ", result.value)
         }
     }
 }
 
 struct LoginCellView: View {
     var userID: UserID
-    var followingList: [UserID]
+    let processor: ActionProcessor
     
     var body: some View {
-        NavigationLink(destination: HomeView(userID: userID, followingList: followingList)) {
+        let homeView = HomeView(userID: userID, processor: processor)
+        
+        NavigationLink(destination: homeView) {
             HStack {
                 Image(systemName: "person")
                 Text(userID)
@@ -34,7 +39,11 @@ struct LoginCellView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(
-            system: SocialSystem(with: DummyGenerator().make())
+            processor: ActionProcessor(
+                system: SocialSystem(
+                    with: Store()
+                )
+            )
         )
     }
 }
