@@ -16,6 +16,7 @@
 		982D7291299E0EDE003DCC67 /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D7290299E0EDE003DCC67 /* SignUpTests.swift */; };
 		982D729B299E0EDE003DCC67 /* SignUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D729A299E0EDE003DCC67 /* SignUpUITests.swift */; };
 		982D729D299E0EDE003DCC67 /* SignUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D729C299E0EDE003DCC67 /* SignUpUITestsLaunchTests.swift */; };
+		982D72AA299E10E6003DCC67 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72A9299E10E6003DCC67 /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		982D7296299E0EDE003DCC67 /* SignUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		982D729A299E0EDE003DCC67 /* SignUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITests.swift; sourceTree = "<group>"; };
 		982D729C299E0EDE003DCC67 /* SignUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		982D72A9299E10E6003DCC67 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				982D727B299E0EDC003DCC67 /* SceneDelegate.swift */,
 				982D727D299E0EDC003DCC67 /* ViewController.swift */,
 				982D727F299E0EDC003DCC67 /* Main.storyboard */,
+				982D72A9299E10E6003DCC67 /* SignUpViewModel.swift */,
 				982D7282299E0EDD003DCC67 /* Assets.xcassets */,
 				982D7284299E0EDD003DCC67 /* LaunchScreen.storyboard */,
 				982D7287299E0EDD003DCC67 /* Info.plist */,
@@ -260,6 +263,7 @@
 			files = (
 				982D727E299E0EDC003DCC67 /* ViewController.swift in Sources */,
 				982D727A299E0EDC003DCC67 /* AppDelegate.swift in Sources */,
+				982D72AA299E10E6003DCC67 /* SignUpViewModel.swift in Sources */,
 				982D727C299E0EDC003DCC67 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
