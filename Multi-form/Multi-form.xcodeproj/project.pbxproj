@@ -20,7 +20,7 @@
 		982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E8299F1E89003DCC67 /* ThemeFormView.swift */; };
 		982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EB299F46F7003DCC67 /* TitleFormView.swift */; };
 		982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EE299F657F003DCC67 /* TitleFormCellView.swift */; };
-		982D72F1299F7EA1003DCC67 /* FormViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F0299F7EA1003DCC67 /* FormViewState.swift */; };
+		982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		982D72E8299F1E89003DCC67 /* ThemeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFormView.swift; sourceTree = "<group>"; };
 		982D72EB299F46F7003DCC67 /* TitleFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormView.swift; sourceTree = "<group>"; };
 		982D72EE299F657F003DCC67 /* TitleFormCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormCellView.swift; sourceTree = "<group>"; };
-		982D72F0299F7EA1003DCC67 /* FormViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewState.swift; sourceTree = "<group>"; };
+		982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleFormView+Types.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,6 @@
 				982D72BB299E68AA003DCC67 /* Assets.xcassets */,
 				982D72BD299E68AA003DCC67 /* Preview Content */,
 				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
-				982D72F0299F7EA1003DCC67 /* FormViewState.swift */,
 			);
 			path = "Multi-form";
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 			children = (
 				982D72EB299F46F7003DCC67 /* TitleFormView.swift */,
 				982D72EE299F657F003DCC67 /* TitleFormCellView.swift */,
+				982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */,
 			);
 			path = TitleForm;
 			sourceTree = "<group>";
@@ -297,9 +297,9 @@
 				982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */,
 				982D72E6299F1E2B003DCC67 /* ThemeType.swift in Sources */,
 				982D72E4299F1DFF003DCC67 /* ThemeCellView.swift in Sources */,
+				982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */,
 				982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */,
 				982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */,
-				982D72F1299F7EA1003DCC67 /* FormViewState.swift in Sources */,
 				982D72E2299E6E33003DCC67 /* FormView.swift in Sources */,
 				982D72BA299E68A9003DCC67 /* ContentView.swift in Sources */,
 				982D72B8299E68A9003DCC67 /* Multi_formApp.swift in Sources */,

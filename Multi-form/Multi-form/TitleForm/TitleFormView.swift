@@ -4,44 +4,52 @@ import SwiftUI
 // 약속명.valid && 장소명.valid 일때만 상위뷰에 이벤트 전파!
 struct TitleFormView: View {
     private let maxInputTextCount = 10
-    @State private var titleInput = Input()
-    @State private var placeInput = Input()
+    
+    // 상위에서 전달받는 상태값
+    @Binding var title: String
+    @Binding var place: String
+
+    // 화면을 그릴때 필요한 값
+    @State private var titleViewState = ViewState.none
+    @State private var placeViewState = ViewState.none
     
     var body: some View {
         VStack {
             let list = [
-                (cellInfo: CellInfo.title, state: titleInput),
-                (cellInfo: CellInfo.place, state: placeInput)
+                (type: CellType.title, viewState: $titleViewState, value: title),
+                (type: CellType.place, viewState: $placeViewState, value: place)
             ]
             
-            List(list, id: \.cellInfo.hashValue) {
-                (cellInfo, state) in
+            List(list, id: \.type) {
+                (type, viewState, value) in
                 
-                TitleFormCellView(renderInfo: cellInfo, input: .init(get: {
-                    state
+                TitleFormCellView(viewType: type, viewState: viewState, value: .init(get: {
+                    value
                 }, set: { input in
-                    var updateState = state
-                    if input.text.count <= 0 {
-                        updateState.viewState = .none
-                        updateState.text = input.text
-                    } else if (input.text.count > 0) && (input.text.count <= maxInputTextCount) {
-                        updateState.viewState = .valid
-                        updateState.text = input.text
+                    var updateViewState: TitleFormView.ViewState = .none
+                    let inputTextCount = input.count
+                    
+                    if inputTextCount <= 0 {
+                        updateViewState = .none
+                    } else if (inputTextCount > 0) && (inputTextCount <= maxInputTextCount) {
+                        updateViewState = .valid
                     } else {
-                        updateState.viewState = .notValid
+                        updateViewState = .notValid
                     }
-                    switch cellInfo {
+                    switch type {
                     case .title:
-                        titleInput = updateState
+                        title = input
+                        titleViewState = updateViewState
                     case .place:
-                        placeInput = updateState
+                        place = input
+                        placeViewState = updateViewState
                     }
                 }))
             }
             .listStyle(.plain)
             .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
             Spacer()
-            Text("Input = \(titleInput.text), \(placeInput.text)")
+            Text("Input = \(title), \(place)")
         }
         .padding()
     }
@@ -49,38 +57,6 @@ struct TitleFormView: View {
 
 struct TitleFormView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleFormView()
+        TitleFormView(title: .constant("약속명"), place: .constant("장소"))
     }
-}
-
-// MARK: - CellInfo
-extension TitleFormView {
-    enum CellInfo {
-        case title
-        case place
-        
-        var text: String {
-            switch self {
-            case .title:
-                return "약속명(선택)"
-            case .place:
-                return "장소(선택)"
-            }
-        }
-        
-        var placeholder: String {
-            switch self {
-            case .title:
-                return "YUMMY"
-            case .place:
-                return "강남, 온라인 등"
-            }
-        }
-    }
-    
-    struct Input {
-        var text = ""
-        var viewState: FormViewState = .none
-    }
-
 }
