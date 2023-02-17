@@ -10,25 +10,31 @@ struct TitleFormView: View {
     var body: some View {
         VStack {
             List {
-                TitleFormCellView(input: $titleInput) { onChangeText in
-                    if onChangeText.count <= 0 {
+                TitleFormCellView(input: .init(get: {
+                    return titleInput
+                }, set: { input in
+                    if input.text.count <= 0 {
                         titleInput.viewState = .none
-                    } else if (onChangeText.count > 0) && (onChangeText.count <= maxInputTextCount) {
+                    } else if (input.text.count > 0) && (input.text.count <= maxInputTextCount) {
                         titleInput.viewState = .valid
+                        titleInput.text = input.text
                     } else {
                         titleInput.viewState = .notValid
                     }
-                }
+                }))
                 
-                TitleFormCellView(input: $placeInput) { onChangeText in
-                    if onChangeText.count <= 0 {
+                TitleFormCellView(input: .init(get: {
+                    placeInput
+                }, set: { input in
+                    if input.text.count <= 0 {
                         placeInput.viewState = .none
-                    } else if (onChangeText.count > 0) && (onChangeText.count <= maxInputTextCount) {
+                    } else if (input.text.count > 0) && (input.text.count <= maxInputTextCount) {
                         placeInput.viewState = .valid
+                        placeInput.text = input.text
                     } else {
                         placeInput.viewState = .notValid
                     }
-                }
+                }))
             }
             .listStyle(.plain)
             .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
@@ -45,7 +51,7 @@ struct TitleFormView_Previews: PreviewProvider {
     }
 }
 
-// MARK: - TitleFormView: InputType enum
+// MARK: - CellInfo
 extension TitleFormView {
     enum CellInfo {
         case title
@@ -73,34 +79,7 @@ extension TitleFormView {
     struct Input {
         let info: CellInfo
         var text = ""
-        var viewState: ViewState = .none
+        var viewState: FormViewState = .none
     }
 
-}
-
-// MARK: - ViewState enum
-enum ViewState {
-    case none
-    case valid
-    case notValid
-    
-    var strokeColor: Color {
-        switch self {
-        case .none:
-            return Color(red: 0.94, green: 0.94, blue: 0.94)
-        case .valid:
-            return Color.blue
-        case .notValid:
-            return Color.red
-        }
-    }
-    
-    var warningText: String {
-        switch self {
-        case .notValid:
-            return "10글자를 초과했습니다."
-        default:
-            return ""
-        }
-    }
 }
