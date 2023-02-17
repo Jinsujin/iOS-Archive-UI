@@ -4,7 +4,7 @@ import SwiftUI
 struct FormModel {
     /// 약속테마(필수값)
     /// 초기값:  아무것도 선택하지 않은 상태
-    var promissType: ThemeType?
+    var theme: ThemeType?
     
     /// 약속명: optional
     var title: String = ""
@@ -49,7 +49,7 @@ struct FormView: View {
             // MARK: - 하위뷰
             TabView {
                 TitleFormView(title: $model.title, place: $model.place)
-                ThemeFormView()
+                ThemeFormView(theme: $model.theme)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             // ----
