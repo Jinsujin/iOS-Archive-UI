@@ -4,35 +4,37 @@ import SwiftUI
 // 약속명.valid && 장소명.valid 일때만 상위뷰에 이벤트 전파!
 struct TitleFormView: View {
     private let maxInputTextCount = 10
-    @State private var titleInput = Input(info: .title)
-    @State private var placeInput = Input(info: .place)
+    @State private var titleInput = Input()
+    @State private var placeInput = Input()
     
     var body: some View {
         VStack {
-            List {
-                TitleFormCellView(input: .init(get: {
-                    return titleInput
-                }, set: { input in
-                    if input.text.count <= 0 {
-                        titleInput.viewState = .none
-                    } else if (input.text.count > 0) && (input.text.count <= maxInputTextCount) {
-                        titleInput.viewState = .valid
-                        titleInput.text = input.text
-                    } else {
-                        titleInput.viewState = .notValid
-                    }
-                }))
+            let list = [
+                (cellInfo: CellInfo.title, state: titleInput),
+                (cellInfo: CellInfo.place, state: placeInput)
+            ]
+            
+            List(list, id: \.cellInfo.hashValue) {
+                (cellInfo, state) in
                 
-                TitleFormCellView(input: .init(get: {
-                    placeInput
+                TitleFormCellView(renderInfo: cellInfo, input: .init(get: {
+                    state
                 }, set: { input in
+                    var updateState = state
                     if input.text.count <= 0 {
-                        placeInput.viewState = .none
+                        updateState.viewState = .none
+                        updateState.text = input.text
                     } else if (input.text.count > 0) && (input.text.count <= maxInputTextCount) {
-                        placeInput.viewState = .valid
-                        placeInput.text = input.text
+                        updateState.viewState = .valid
+                        updateState.text = input.text
                     } else {
-                        placeInput.viewState = .notValid
+                        updateState.viewState = .notValid
+                    }
+                    switch cellInfo {
+                    case .title:
+                        titleInput = updateState
+                    case .place:
+                        placeInput = updateState
                     }
                 }))
             }
@@ -77,7 +79,6 @@ extension TitleFormView {
     }
     
     struct Input {
-        let info: CellInfo
         var text = ""
         var viewState: FormViewState = .none
     }

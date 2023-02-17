@@ -6,14 +6,15 @@ import SwiftUI
 //  2-2. 유효하지 않은값 입력: red line, "10글자 초과 text 보이기"
 
 struct TitleFormCellView: View {
+    let renderInfo: TitleFormView.CellInfo
     @Binding var input: TitleFormView.Input
     
     var body: some View {
         VStack {
-            Text(input.info.text)
+            Text(renderInfo.text)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-            TextField(input.info.placeholder, text: $input.text)
+            TextField(renderInfo.placeholder, text: $input.text)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
