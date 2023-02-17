@@ -16,49 +16,47 @@ struct FormView: View {
     ]
     
     var body: some View {
-        HStack {
-            VStack {
-                HStack {
-                    Text("\(currentPageIndex + 1)/5")
-                    Spacer()
-                    Button {
-                        dismiss()
-                     } label: {
-                         Image(systemName: "x.circle")
-                     }
-                }
-                .padding(.bottom)
-                Text(titleList[currentPageIndex])
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom)
-                // MARK: - 하위뷰
-                TabView {
-                    ThemeFormView()
-                    ThemeFormView()
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                // ----
+        VStack {
+            HStack {
+                Text("\(currentPageIndex + 1)/5")
                 Spacer()
-                
                 Button {
-                    print("next button")
-                    // TODO: -
-                    // 다음 버튼을 누르면 현재 페이지인덱스 += 1
-                    // 이전 버튼을 누르면 현재 페이지인덱스 -= 1
-                    currentPageIndex = 1
-                } label: {
-                    Text("다음")
-                        .padding()
-                        .border(.black)
-                        .frame(maxWidth: .infinity)
-                        
-                }
-                .foregroundColor(.white)
-                .background(.pink)
-                .cornerRadius(10)
+                    dismiss()
+                 } label: {
+                     Image(systemName: "x.circle")
+                 }
             }
-            .padding()
+            .padding(.bottom)
+            Text(titleList[currentPageIndex])
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom)
+            // MARK: - 하위뷰
+            TabView {
+                TitleFormView()
+                ThemeFormView()
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            // ----
+            Spacer()
+            
+            Button {
+                print("next button")
+                // TODO: -
+                // 다음 버튼을 누르면 현재 페이지인덱스 += 1
+                // 이전 버튼을 누르면 현재 페이지인덱스 -= 1
+                currentPageIndex = 1
+            } label: {
+                Text("다음")
+                    .padding()
+                    .border(.black)
+                    .frame(maxWidth: .infinity)
+                    
+            }
+            .foregroundColor(.white)
+            .background(.pink)
+            .cornerRadius(10)
         }
+        .padding()
     }
 }
 

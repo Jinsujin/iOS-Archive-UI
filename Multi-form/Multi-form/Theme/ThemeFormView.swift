@@ -23,7 +23,6 @@ struct ThemeFormView: View {
         }
         .padding()
     }
-    
 }
 
 struct ThemeFormView_Previews: PreviewProvider {
