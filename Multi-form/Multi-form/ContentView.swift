@@ -1,3 +1,4 @@
+import ComposableArchitecture
 import SwiftUI
 
 struct ContentView: View {
@@ -11,7 +12,10 @@ struct ContentView: View {
             } label: {
                 Text("입력하기")
             }
-            .fullScreenCover(isPresented: self.$showEntryView, content: FormView.init)
+//            .fullScreenCover(
+//                isPresented: self.$showEntryView,
+//                content: FormView.init
+//            )
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
