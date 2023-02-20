@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		982D72B8299E68A9003DCC67 /* Multi_formApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72B7299E68A9003DCC67 /* Multi_formApp.swift */; };
+		982D72BA299E68A9003DCC67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72B9299E68A9003DCC67 /* ContentView.swift */; };
+		982D72BC299E68AA003DCC67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982D72BB299E68AA003DCC67 /* Assets.xcassets */; };
+		982D72BF299E68AA003DCC67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982D72BE299E68AA003DCC67 /* Preview Assets.xcassets */; };
+		982D72C9299E68AA003DCC67 /* Multi_formTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72C8299E68AA003DCC67 /* Multi_formTests.swift */; };
+		982D72D3299E68AA003DCC67 /* Multi_formUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72D2299E68AA003DCC67 /* Multi_formUITests.swift */; };
+		982D72D5299E68AA003DCC67 /* Multi_formUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72D4299E68AA003DCC67 /* Multi_formUITestsLaunchTests.swift */; };
+		982D72E2299E6E33003DCC67 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E1299E6E33003DCC67 /* FormView.swift */; };
+		982D72E4299F1DFF003DCC67 /* ThemeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */; };
+		982D72E6299F1E2B003DCC67 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E5299F1E2B003DCC67 /* ThemeType.swift */; };
+		982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E8299F1E89003DCC67 /* ThemeFormView.swift */; };
+		982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EB299F46F7003DCC67 /* TitleFormView.swift */; };
+		982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EE299F657F003DCC67 /* TitleFormCellView.swift */; };
+		982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		982D72C5299E68AA003DCC67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 982D72AC299E68A9003DCC67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 982D72B3299E68A9003DCC67;
+			remoteInfo = "Multi-form";
+		};
+		982D72CF299E68AA003DCC67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 982D72AC299E68A9003DCC67 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 982D72B3299E68A9003DCC67;
+			remoteInfo = "Multi-form";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		982D72B4299E68A9003DCC67 /* Multi-form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		982D72B7299E68A9003DCC67 /* Multi_formApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_formApp.swift; sourceTree = "<group>"; };
+		982D72B9299E68A9003DCC67 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		982D72BB299E68AA003DCC67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		982D72BE299E68AA003DCC67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		982D72C4299E68AA003DCC67 /* Multi-formTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multi-formTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		982D72C8299E68AA003DCC67 /* Multi_formTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_formTests.swift; sourceTree = "<group>"; };
+		982D72CE299E68AA003DCC67 /* Multi-formUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multi-formUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		982D72D2299E68AA003DCC67 /* Multi_formUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_formUITests.swift; sourceTree = "<group>"; };
+		982D72D4299E68AA003DCC67 /* Multi_formUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi_formUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		982D72E1299E6E33003DCC67 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCellView.swift; sourceTree = "<group>"; };
+		982D72E5299F1E2B003DCC67 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
+		982D72E8299F1E89003DCC67 /* ThemeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFormView.swift; sourceTree = "<group>"; };
+		982D72EB299F46F7003DCC67 /* TitleFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormView.swift; sourceTree = "<group>"; };
+		982D72EE299F657F003DCC67 /* TitleFormCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormCellView.swift; sourceTree = "<group>"; };
+		982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleFormView+Types.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		982D72B1299E68A9003DCC67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72C1299E68AA003DCC67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72CB299E68AA003DCC67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		982D72AB299E68A8003DCC67 = {
+			isa = PBXGroup;
+			children = (
+				982D72B6299E68A9003DCC67 /* Multi-form */,
+				982D72C7299E68AA003DCC67 /* Multi-formTests */,
+				982D72D1299E68AA003DCC67 /* Multi-formUITests */,
+				982D72B5299E68A9003DCC67 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		982D72B5299E68A9003DCC67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				982D72B4299E68A9003DCC67 /* Multi-form.app */,
+				982D72C4299E68AA003DCC67 /* Multi-formTests.xctest */,
+				982D72CE299E68AA003DCC67 /* Multi-formUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		982D72B6299E68A9003DCC67 /* Multi-form */ = {
+			isa = PBXGroup;
+			children = (
+				982D72ED299F6549003DCC67 /* TitleForm */,
+				982D72E7299F1E53003DCC67 /* ThemeForm */,
+				982D72B7299E68A9003DCC67 /* Multi_formApp.swift */,
+				982D72B9299E68A9003DCC67 /* ContentView.swift */,
+				982D72E1299E6E33003DCC67 /* FormView.swift */,
+				982D72BB299E68AA003DCC67 /* Assets.xcassets */,
+				982D72BD299E68AA003DCC67 /* Preview Content */,
+				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
+			);
+			path = "Multi-form";
+			sourceTree = "<group>";
+		};
+		982D72BD299E68AA003DCC67 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				982D72BE299E68AA003DCC67 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		982D72C7299E68AA003DCC67 /* Multi-formTests */ = {
+			isa = PBXGroup;
+			children = (
+				982D72C8299E68AA003DCC67 /* Multi_formTests.swift */,
+			);
+			path = "Multi-formTests";
+			sourceTree = "<group>";
+		};
+		982D72D1299E68AA003DCC67 /* Multi-formUITests */ = {
+			isa = PBXGroup;
+			children = (
+				982D72D2299E68AA003DCC67 /* Multi_formUITests.swift */,
+				982D72D4299E68AA003DCC67 /* Multi_formUITestsLaunchTests.swift */,
+			);
+			path = "Multi-formUITests";
+			sourceTree = "<group>";
+		};
+		982D72E7299F1E53003DCC67 /* ThemeForm */ = {
+			isa = PBXGroup;
+			children = (
+				982D72E5299F1E2B003DCC67 /* ThemeType.swift */,
+				982D72E8299F1E89003DCC67 /* ThemeFormView.swift */,
+			);
+			path = ThemeForm;
+			sourceTree = "<group>";
+		};
+		982D72ED299F6549003DCC67 /* TitleForm */ = {
+			isa = PBXGroup;
+			children = (
+				982D72EB299F46F7003DCC67 /* TitleFormView.swift */,
+				982D72EE299F657F003DCC67 /* TitleFormCellView.swift */,
+				982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */,
+			);
+			path = TitleForm;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		982D72B3299E68A9003DCC67 /* Multi-form */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 982D72D8299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-form" */;
+			buildPhases = (
+				982D72B0299E68A9003DCC67 /* Sources */,
+				982D72B1299E68A9003DCC67 /* Frameworks */,
+				982D72B2299E68A9003DCC67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Multi-form";
+			productName = "Multi-form";
+			productReference = 982D72B4299E68A9003DCC67 /* Multi-form.app */;
+			productType = "com.apple.product-type.application";
+		};
+		982D72C3299E68AA003DCC67 /* Multi-formTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 982D72DB299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-formTests" */;
+			buildPhases = (
+				982D72C0299E68AA003DCC67 /* Sources */,
+				982D72C1299E68AA003DCC67 /* Frameworks */,
+				982D72C2299E68AA003DCC67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				982D72C6299E68AA003DCC67 /* PBXTargetDependency */,
+			);
+			name = "Multi-formTests";
+			productName = "Multi-formTests";
+			productReference = 982D72C4299E68AA003DCC67 /* Multi-formTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		982D72CD299E68AA003DCC67 /* Multi-formUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 982D72DE299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-formUITests" */;
+			buildPhases = (
+				982D72CA299E68AA003DCC67 /* Sources */,
+				982D72CB299E68AA003DCC67 /* Frameworks */,
+				982D72CC299E68AA003DCC67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				982D72D0299E68AA003DCC67 /* PBXTargetDependency */,
+			);
+			name = "Multi-formUITests";
+			productName = "Multi-formUITests";
+			productReference = 982D72CE299E68AA003DCC67 /* Multi-formUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		982D72AC299E68A9003DCC67 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					982D72B3299E68A9003DCC67 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					982D72C3299E68AA003DCC67 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 982D72B3299E68A9003DCC67;
+					};
+					982D72CD299E68AA003DCC67 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 982D72B3299E68A9003DCC67;
+					};
+				};
+			};
+			buildConfigurationList = 982D72AF299E68A9003DCC67 /* Build configuration list for PBXProject "Multi-form" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 982D72AB299E68A8003DCC67;
+			productRefGroup = 982D72B5299E68A9003DCC67 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				982D72B3299E68A9003DCC67 /* Multi-form */,
+				982D72C3299E68AA003DCC67 /* Multi-formTests */,
+				982D72CD299E68AA003DCC67 /* Multi-formUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		982D72B2299E68A9003DCC67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				982D72BF299E68AA003DCC67 /* Preview Assets.xcassets in Resources */,
+				982D72BC299E68AA003DCC67 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72C2299E68AA003DCC67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72CC299E68AA003DCC67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		982D72B0299E68A9003DCC67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */,
+				982D72E6299F1E2B003DCC67 /* ThemeType.swift in Sources */,
+				982D72E4299F1DFF003DCC67 /* ThemeCellView.swift in Sources */,
+				982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */,
+				982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */,
+				982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */,
+				982D72E2299E6E33003DCC67 /* FormView.swift in Sources */,
+				982D72BA299E68A9003DCC67 /* ContentView.swift in Sources */,
+				982D72B8299E68A9003DCC67 /* Multi_formApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72C0299E68AA003DCC67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				982D72C9299E68AA003DCC67 /* Multi_formTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		982D72CA299E68AA003DCC67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				982D72D5299E68AA003DCC67 /* Multi_formUITestsLaunchTests.swift in Sources */,
+				982D72D3299E68AA003DCC67 /* Multi_formUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		982D72C6299E68AA003DCC67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 982D72B3299E68A9003DCC67 /* Multi-form */;
+			targetProxy = 982D72C5299E68AA003DCC67 /* PBXContainerItemProxy */;
+		};
+		982D72D0299E68AA003DCC67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 982D72B3299E68A9003DCC67 /* Multi-form */;
+			targetProxy = 982D72CF299E68AA003DCC67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		982D72D6299E68AA003DCC67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		982D72D7299E68AA003DCC67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		982D72D9299E68AA003DCC67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Multi-form/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-form";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		982D72DA299E68AA003DCC67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Multi-form/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-form";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		982D72DC299E68AA003DCC67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-formTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-form.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Multi-form";
+			};
+			name = Debug;
+		};
+		982D72DD299E68AA003DCC67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-formTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Multi-form.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Multi-form";
+			};
+			name = Release;
+		};
+		982D72DF299E68AA003DCC67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-formUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Multi-form";
+			};
+			name = Debug;
+		};
+		982D72E0299E68AA003DCC67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jinsujin.Multi-formUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Multi-form";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		982D72AF299E68A9003DCC67 /* Build configuration list for PBXProject "Multi-form" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982D72D6299E68AA003DCC67 /* Debug */,
+				982D72D7299E68AA003DCC67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		982D72D8299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-form" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982D72D9299E68AA003DCC67 /* Debug */,
+				982D72DA299E68AA003DCC67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		982D72DB299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-formTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982D72DC299E68AA003DCC67 /* Debug */,
+				982D72DD299E68AA003DCC67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		982D72DE299E68AA003DCC67 /* Build configuration list for PBXNativeTarget "Multi-formUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982D72DF299E68AA003DCC67 /* Debug */,
+				982D72E0299E68AA003DCC67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 982D72AC299E68A9003DCC67 /* Project object */;
+}
