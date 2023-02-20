@@ -1,60 +1,86 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ThemeFormView: View {
-    
-    // 상위뷰로 부터 전달받은 객체
-    let store: StoreOf<Form>
-    
-    // 현재 뷰에서 사용할 객체
-    // 현재뷰의 상태, 상위뷰 Action을 사용해 viewStore 객체 생성
-//    @ObservedObject var viewStore: ViewStore<ViewState, Form.Action>
-    
-    init(store: StoreOf<Form>) {
-      self.store = store
-//      self.viewStore = ViewStore(self.store.scope(state: ViewState.init(state:)))
+
+struct ThemeForm: ReducerProtocol {
+    struct State: Equatable {
+        var themes: IdentifiedArrayOf<Theme.State> = [
+            .init(type: .meal),
+            .init(type: .travel),
+            .init(type: .meeting),
+            .init(type: .etc)
+        ]
+        var isAlreadyCheck: Bool {
+            return themes.filter({ $0.isChecked }).count > 0
+        }
+    }
+
+    // 하위뷰에서 일어나는 이벤트를 받아 처리
+    enum Action: Equatable {
+        case theme(id: Theme.State.ID, action: Theme.Action)
     }
     
-    // 상위뷰의 상태값을 사용해 현재뷰의 상태값으로 만든다?
-//    struct ViewState: Equatable {
-//        var themes: IdentifiedArrayOf<Theme.State> = [
-//            .init(type: .meal),
-//            .init(type: .travel),
-//            .init(type: .meeting),
-//            .init(type: .etc)
-//        ]
-//
-//        init(state: Form.State) {
-//            // 전체 themes 배열을 초기화 하는데, 부모로 부터 받아온 state 값이 있다면
-//            // 해당 객체를 true 로 설정
-//            for i in 0..<self.themes.count {
-//                if themes[i].type == state.theme {
-//                    themes[i].isChecked = true
+    var body: some ReducerProtocol<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case .theme(id: let id, action: .toggled):
+                // state.themes 가 업데이트 되고 난 후에 진입
+                // NOTE: - toggle 됨
+                var theme = state.themes
+                    .filter({ $0.id == id })
+                    .first
+                theme?.isChecked.toggle()
+                    
+                // NOTE: - toggle 이 안됨 ⚠️
+//                for i in 0..<state.themes.count {
+//                    if id == state.themes[i].id {
+//                        state.themes[i].isChecked.toggle() // 안됨
+//                        state.themes[i].isChecked = true // 됨
+//                    }
 //                }
-//            }
-//        }
-//    }
-    
-    var body: some View {
-        VStack {
-            List {
-                ForEachStore(self.store.scope(state: \.themes, action: Form.Action.theme(id:action:))) {
-                    ThemeCellView(store: $0)
-                }
+                return .none
             }
-            .listStyle(.plain)
-            .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
-            Spacer()
-            
-            // 값 안바뀜
-//            Text("Check Count = \(viewStore.state.themes.filter { $0.isChecked }.count)")
         }
-        .padding()
+        .forEach(\.themes, action: /Action.theme(id:action:)) {
+            Theme()
+        }
     }
 }
 
-//struct ThemeFormView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ThemeFormView(theme: .constant(nil))
-//    }
-//}
+struct ThemeFormView: View {
+
+    let store: StoreOf<ThemeForm>
+    
+    init(store: StoreOf<ThemeForm>) {
+        self.store = store
+    }
+    
+    var body: some View {
+        WithViewStore(self.store, observe: { $0 }) { viewStore in
+            VStack {
+                List {
+                    ForEachStore(self.store.scope(
+                        state: \.themes,
+                        action: ThemeForm.Action.theme(id:action:))
+                    ) {
+                        ThemeCellView(store: $0)
+                    }
+                }
+                .listStyle(.plain)
+                .padding(EdgeInsets(top: -10, leading: -20, bottom: -10, trailing: -20))
+                Spacer()
+                Text(viewStore.isAlreadyCheck ? "Check" : "not yet")
+            }
+            .padding()
+        }
+    }
+}
+
+struct ThemeFormView_Previews: PreviewProvider {
+    static var previews: some View {
+        ThemeFormView(store: Store(
+            initialState: ThemeForm.State(),
+            reducer: ThemeForm())
+        )
+    }
+}

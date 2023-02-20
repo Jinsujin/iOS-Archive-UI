@@ -3,54 +3,31 @@ import SwiftUI
 
 struct Form: ReducerProtocol {
     struct State: Equatable {
-        /// 약속테마(필수값)
-        /// 초기값:  아무것도 선택하지 않은 상태
-        var theme: ThemeType?
-        
-        /// 약속명: optional
-        var title: String = ""
-        
-        /// 장소: optional
-        var place: String = ""
-        
-        var themes: IdentifiedArrayOf<Theme.State> = [
-            .init(type: .meal),
-            .init(type: .travel),
-            .init(type: .meeting),
-            .init(type: .etc)
-        ]
+        var themeForm = ThemeForm.State()
     }
     
     enum Action: Equatable {
-        case updateTitle(String)
-        case updatePlace(String)
-        case updateTheme(ThemeType)
-        case theme(id: Theme.State.ID, action: Theme.Action)
+        case onAppear
+        case themeForm(ThemeForm.Action)
     }
     
     var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
-            case .updateTitle(let title):
-                state.title = title
+            case .onAppear:
+                state = .init()
                 return .none
-            case .updateTheme(let theme):
-                state.theme = theme
-                return .none
-            case .theme(id: let id, action: .toggled):
-                print("FormReducer:: theme 토글됨, id = ", id)
-                state.theme = ThemeType(rawValue: id)
-                return .none
-            case .updatePlace(let place):
-                state.place = place
+                
+            default:
                 return .none
             }
         }
-        .forEach(\.themes, action: /Action.theme(id:action:)) {
-            Theme()
+        Scope(state: \.themeForm, action: /Action.themeForm) {
+            ThemeForm()
         }
     }
 }
+
 
 struct FormView: View {
     @Environment(\.dismiss) var dismiss
@@ -67,6 +44,10 @@ struct FormView: View {
     ]
     
     let store: StoreOf<Form>
+    
+    init(store: StoreOf<Form>) {
+      self.store = store
+    }
     
     var body: some View {
         VStack {
@@ -86,7 +67,13 @@ struct FormView: View {
             // MARK: - 하위뷰
             TabView {
 //                TitleFormView(title: $model.title, place: $model.place)
-                ThemeFormView(store: store)
+                
+                ThemeFormView(
+                    store: self.store.scope(
+                        state: \.themeForm,
+                        action: Form.Action.themeForm
+                    )
+                )
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             // ----
@@ -109,6 +96,7 @@ struct FormView: View {
             .cornerRadius(10)
         }
         .padding()
+        .onAppear { ViewStore(self.store).send(.onAppear) }
     }
 }
 
