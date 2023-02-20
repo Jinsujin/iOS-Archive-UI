@@ -4,13 +4,7 @@ import SwiftUI
 struct ThemeFormView: View {
     
     @Binding var theme: ThemeType?
-    
-    @State private var themes = [
-        Theme(type: .meal, isCheck: false),
-        Theme(type: .meeting, isCheck: false),
-        Theme(type: .travel, isCheck: false),
-        Theme(type: .etc, isCheck: false)
-    ]
+    @State private var themes = Theme.allCases
     
     var body: some View {
         VStack {
