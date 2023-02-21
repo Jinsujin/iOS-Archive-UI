@@ -79,12 +79,12 @@ struct FormView: View {
                         )
                     )
                     
-//                    ThemeFormView(
-//                        store: self.store.scope(
-//                            state: \.themeForm,
-//                            action: Form.Action.themeForm
-//                        )
-//                    )
+                    ThemeFormView(
+                        store: self.store.scope(
+                            state: \.themeForm,
+                            action: Form.Action.themeForm
+                        )
+                    )
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 // ----
@@ -109,9 +109,7 @@ struct FormView: View {
                 
             }
             .padding()
-            .onAppear {
-                viewStore.send(.onAppear)
-            }
+            .onAppear { viewStore.send(.onAppear) }
         }
     }
 }
