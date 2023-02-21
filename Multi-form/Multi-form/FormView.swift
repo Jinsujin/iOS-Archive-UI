@@ -4,11 +4,13 @@ import SwiftUI
 struct Form: ReducerProtocol {
     struct State: Equatable {
         var themeForm = ThemeForm.State()
+        var titleForm = TitleForm.State()
     }
     
     enum Action: Equatable {
         case onAppear
         case themeForm(ThemeForm.Action)
+        case titleForm(TitleForm.Action)
     }
     
     var body: some ReducerProtocol<State, Action> {
@@ -24,6 +26,9 @@ struct Form: ReducerProtocol {
         }
         Scope(state: \.themeForm, action: /Action.themeForm) {
             ThemeForm()
+        }
+        Scope(state: \.titleForm, action: /Action.titleForm) {
+            TitleForm()
         }
     }
 }
@@ -67,14 +72,19 @@ struct FormView: View {
                     .padding(.bottom)
                 // MARK: - 하위뷰
                 TabView {
-    //                TitleFormView(title: $model.title, place: $model.place)
-                    
-                    ThemeFormView(
+                    TitleFormView(
                         store: self.store.scope(
-                            state: \.themeForm,
-                            action: Form.Action.themeForm
+                            state: \.titleForm,
+                            action: Form.Action.titleForm
                         )
                     )
+                    
+//                    ThemeFormView(
+//                        store: self.store.scope(
+//                            state: \.themeForm,
+//                            action: Form.Action.themeForm
+//                        )
+//                    )
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 // ----
@@ -93,7 +103,8 @@ struct FormView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .foregroundColor(.white)
-                .background(viewStore.themeForm.isValidate ? .pink: .gray)
+                .background(viewStore.titleForm.isValidate ? .pink: .gray)
+//                .background(viewStore.themeForm.isValidate ? .pink: .gray)
                 .cornerRadius(10)
                 
             }

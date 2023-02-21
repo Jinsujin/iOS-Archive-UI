@@ -71,9 +71,7 @@ struct ThemeFormView: View {
                 Text(viewStore.isValidate ? "OK" : "Please Check!")
             }
             .padding()
-            .onAppear{
-                viewStore.send(.onAppear)
-            }
+            .onAppear{ viewStore.send(.onAppear) }
         }
     }
 }
