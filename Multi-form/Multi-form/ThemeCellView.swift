@@ -11,12 +11,16 @@ struct Theme: ReducerProtocol {
     
     enum Action: Equatable {
         case toggled
+        case cancel
     }
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
         case .toggled:
             state.isChecked.toggle()
+            return .none
+        case .cancel:
+            state.isChecked = false
             return .none
         }
     }

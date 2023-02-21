@@ -50,53 +50,58 @@ struct FormView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("\(currentPageIndex + 1)/5")
-                Spacer()
-                Button {
-                    dismiss()
-                 } label: {
-                     Image(systemName: "x.circle")
-                 }
-            }
-            .padding(.bottom)
-            Text(titleList[currentPageIndex])
-                .frame(maxWidth: .infinity, alignment: .leading)
+        WithViewStore(store) { viewStore in
+            VStack {
+                HStack {
+                    Text("\(currentPageIndex + 1)/5")
+                    Spacer()
+                    Button {
+                        dismiss()
+                     } label: {
+                         Image(systemName: "x.circle")
+                     }
+                }
                 .padding(.bottom)
-            // MARK: - 하위뷰
-            TabView {
-//                TitleFormView(title: $model.title, place: $model.place)
-                
-                ThemeFormView(
-                    store: self.store.scope(
-                        state: \.themeForm,
-                        action: Form.Action.themeForm
+                Text(titleList[currentPageIndex])
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom)
+                // MARK: - 하위뷰
+                TabView {
+    //                TitleFormView(title: $model.title, place: $model.place)
+                    
+                    ThemeFormView(
+                        store: self.store.scope(
+                            state: \.themeForm,
+                            action: Form.Action.themeForm
+                        )
                     )
-                )
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                // ----
+                Spacer()
+                
+                Button {
+                    print("next button")
+                    // TODO: -
+                    // 다음 버튼을 누르면 현재 페이지인덱스 += 1
+                    // 이전 버튼을 누르면 현재 페이지인덱스 -= 1
+                    currentPageIndex = 1
+                } label: {
+                    Text("다음")
+                        .padding()
+                        .border(.black)
+                        .frame(maxWidth: .infinity)
+                }
+                .foregroundColor(.white)
+                .background(viewStore.themeForm.isValidate ? .pink: .gray)
+                .cornerRadius(10)
+                
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            // ----
-            Spacer()
-            
-            Button {
-                print("next button")
-                // TODO: -
-                // 다음 버튼을 누르면 현재 페이지인덱스 += 1
-                // 이전 버튼을 누르면 현재 페이지인덱스 -= 1
-                currentPageIndex = 1
-            } label: {
-                Text("다음")
-                    .padding()
-                    .border(.black)
-                    .frame(maxWidth: .infinity)
+            .padding()
+            .onAppear {
+                viewStore.send(.onAppear)
             }
-            .foregroundColor(.white)
-            .background(.pink)
-            .cornerRadius(10)
         }
-        .padding()
-        .onAppear { ViewStore(self.store).send(.onAppear) }
     }
 }
 
