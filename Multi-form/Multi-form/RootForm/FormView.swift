@@ -133,9 +133,9 @@ struct FormView: View {
             } label: {
                 Text("다음")
                     .padding()
-                    .border(.black)
                     .frame(maxWidth: .infinity)
             }
+            .disabled(!viewStore.isVerify)
             .foregroundColor(.white)
             .background(viewStore.isVerify ? .pink: .gray)
             .cornerRadius(10)

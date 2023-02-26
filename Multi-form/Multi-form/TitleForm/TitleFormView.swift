@@ -8,7 +8,7 @@ struct TitleForm: ReducerProtocol {
         var title: String = ""
         var place: String = ""
         var isValidate: Bool {
-            return (title.count < 10 && place.count < 10)
+            return (title.count <= 10 && place.count <= 10)
         }
     }
 
