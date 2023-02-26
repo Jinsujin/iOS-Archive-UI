@@ -22,6 +22,11 @@
 		982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EE299F657F003DCC67 /* TitleFormCellView.swift */; };
 		982D72F9299FBD8B003DCC67 /* TitleFormView+CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */; };
 		986577DC29A3413600BB1BDA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 986577DB29A3413600BB1BDA /* ComposableArchitecture */; };
+		986577E529AB436200BB1BDA /* Reducer+Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577E429AB436200BB1BDA /* Reducer+Form.swift */; };
+		986577E729AB43A900BB1BDA /* Reducer+TitleForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577E629AB43A900BB1BDA /* Reducer+TitleForm.swift */; };
+		986577EA29AB43E700BB1BDA /* Reducer+TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577E929AB43E700BB1BDA /* Reducer+TitleCell.swift */; };
+		986577EC29AB441C00BB1BDA /* Reducer+ThemeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577EB29AB441C00BB1BDA /* Reducer+ThemeForm.swift */; };
+		986577EF29AB446300BB1BDA /* Reducer+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577EE29AB446300BB1BDA /* Reducer+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		982D72EB299F46F7003DCC67 /* TitleFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormView.swift; sourceTree = "<group>"; };
 		982D72EE299F657F003DCC67 /* TitleFormCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormCellView.swift; sourceTree = "<group>"; };
 		982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleFormView+CellType.swift"; sourceTree = "<group>"; };
+		986577E429AB436200BB1BDA /* Reducer+Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+Form.swift"; sourceTree = "<group>"; };
+		986577E629AB43A900BB1BDA /* Reducer+TitleForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+TitleForm.swift"; sourceTree = "<group>"; };
+		986577E929AB43E700BB1BDA /* Reducer+TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+TitleCell.swift"; sourceTree = "<group>"; };
+		986577EB29AB441C00BB1BDA /* Reducer+ThemeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+ThemeForm.swift"; sourceTree = "<group>"; };
+		986577EE29AB446300BB1BDA /* Reducer+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +120,7 @@
 		982D72B6299E68A9003DCC67 /* Multi-form */ = {
 			isa = PBXGroup;
 			children = (
-				986577DD29A4EF2900BB1BDA /* RootForm */,
+				986577DD29A4EF2900BB1BDA /* Root */,
 				982D72ED299F6549003DCC67 /* TitleForm */,
 				982D72E7299F1E53003DCC67 /* ThemeForm */,
 				982D72B7299E68A9003DCC67 /* Multi_formApp.swift */,
@@ -149,9 +159,10 @@
 		982D72E7299F1E53003DCC67 /* ThemeForm */ = {
 			isa = PBXGroup;
 			children = (
+				986577ED29AB444A00BB1BDA /* Cell */,
 				982D72E5299F1E2B003DCC67 /* ThemeType.swift */,
 				982D72E8299F1E89003DCC67 /* ThemeFormView.swift */,
-				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
+				986577EB29AB441C00BB1BDA /* Reducer+ThemeForm.swift */,
 			);
 			path = ThemeForm;
 			sourceTree = "<group>";
@@ -159,19 +170,39 @@
 		982D72ED299F6549003DCC67 /* TitleForm */ = {
 			isa = PBXGroup;
 			children = (
+				986577E829AB43D100BB1BDA /* Cell */,
 				982D72EB299F46F7003DCC67 /* TitleFormView.swift */,
-				982D72EE299F657F003DCC67 /* TitleFormCellView.swift */,
 				982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */,
+				986577E629AB43A900BB1BDA /* Reducer+TitleForm.swift */,
 			);
 			path = TitleForm;
 			sourceTree = "<group>";
 		};
-		986577DD29A4EF2900BB1BDA /* RootForm */ = {
+		986577DD29A4EF2900BB1BDA /* Root */ = {
 			isa = PBXGroup;
 			children = (
 				982D72E1299E6E33003DCC67 /* FormView.swift */,
+				986577E429AB436200BB1BDA /* Reducer+Form.swift */,
 			);
-			path = RootForm;
+			path = Root;
+			sourceTree = "<group>";
+		};
+		986577E829AB43D100BB1BDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				982D72EE299F657F003DCC67 /* TitleFormCellView.swift */,
+				986577E929AB43E700BB1BDA /* Reducer+TitleCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		986577ED29AB444A00BB1BDA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
+				986577EE29AB446300BB1BDA /* Reducer+Theme.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,13 +342,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */,
+				986577EA29AB43E700BB1BDA /* Reducer+TitleCell.swift in Sources */,
 				982D72E6299F1E2B003DCC67 /* ThemeType.swift in Sources */,
 				982D72E4299F1DFF003DCC67 /* ThemeCellView.swift in Sources */,
 				982D72F9299FBD8B003DCC67 /* TitleFormView+CellType.swift in Sources */,
 				982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */,
 				982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */,
+				986577EC29AB441C00BB1BDA /* Reducer+ThemeForm.swift in Sources */,
 				982D72E2299E6E33003DCC67 /* FormView.swift in Sources */,
 				982D72BA299E68A9003DCC67 /* ContentView.swift in Sources */,
+				986577E729AB43A900BB1BDA /* Reducer+TitleForm.swift in Sources */,
+				986577E529AB436200BB1BDA /* Reducer+Form.swift in Sources */,
+				986577EF29AB446300BB1BDA /* Reducer+Theme.swift in Sources */,
 				982D72B8299E68A9003DCC67 /* Multi_formApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
