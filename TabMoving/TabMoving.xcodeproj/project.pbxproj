@@ -14,6 +14,7 @@
 		9865780E29AB561100BB1BDA /* TabMovingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865780D29AB561100BB1BDA /* TabMovingTests.swift */; };
 		9865781829AB561100BB1BDA /* TabMovingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781729AB561100BB1BDA /* TabMovingUITests.swift */; };
 		9865781A29AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */; };
+		9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865782629AB56D000BB1BDA /* HeaderTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9865781329AB561100BB1BDA /* TabMovingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabMovingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9865781729AB561100BB1BDA /* TabMovingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITests.swift; sourceTree = "<group>"; };
 		9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9865782629AB56D000BB1BDA /* HeaderTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				986577FC29AB560F00BB1BDA /* TabMovingApp.swift */,
 				986577FE29AB560F00BB1BDA /* ContentView.swift */,
+				9865782629AB56D000BB1BDA /* HeaderTabView.swift */,
 				9865780029AB561100BB1BDA /* Assets.xcassets */,
 				9865780229AB561100BB1BDA /* Preview Content */,
 			);
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				986577FF29AB560F00BB1BDA /* ContentView.swift in Sources */,
+				9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */,
 				986577FD29AB560F00BB1BDA /* TabMovingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
