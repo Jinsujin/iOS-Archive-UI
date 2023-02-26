@@ -20,7 +20,8 @@
 		982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72E8299F1E89003DCC67 /* ThemeFormView.swift */; };
 		982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EB299F46F7003DCC67 /* TitleFormView.swift */; };
 		982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72EE299F657F003DCC67 /* TitleFormCellView.swift */; };
-		982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */; };
+		982D72F9299FBD8B003DCC67 /* TitleFormView+CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */; };
+		986577DC29A3413600BB1BDA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 986577DB29A3413600BB1BDA /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,7 @@
 		982D72E8299F1E89003DCC67 /* ThemeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFormView.swift; sourceTree = "<group>"; };
 		982D72EB299F46F7003DCC67 /* TitleFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormView.swift; sourceTree = "<group>"; };
 		982D72EE299F657F003DCC67 /* TitleFormCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFormCellView.swift; sourceTree = "<group>"; };
-		982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleFormView+Types.swift"; sourceTree = "<group>"; };
+		982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TitleFormView+CellType.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				986577DC29A3413600BB1BDA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,14 +110,13 @@
 		982D72B6299E68A9003DCC67 /* Multi-form */ = {
 			isa = PBXGroup;
 			children = (
+				986577DD29A4EF2900BB1BDA /* RootForm */,
 				982D72ED299F6549003DCC67 /* TitleForm */,
 				982D72E7299F1E53003DCC67 /* ThemeForm */,
 				982D72B7299E68A9003DCC67 /* Multi_formApp.swift */,
 				982D72B9299E68A9003DCC67 /* ContentView.swift */,
-				982D72E1299E6E33003DCC67 /* FormView.swift */,
 				982D72BB299E68AA003DCC67 /* Assets.xcassets */,
 				982D72BD299E68AA003DCC67 /* Preview Content */,
-				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
 			);
 			path = "Multi-form";
 			sourceTree = "<group>";
@@ -150,6 +151,7 @@
 			children = (
 				982D72E5299F1E2B003DCC67 /* ThemeType.swift */,
 				982D72E8299F1E89003DCC67 /* ThemeFormView.swift */,
+				982D72E3299F1DFF003DCC67 /* ThemeCellView.swift */,
 			);
 			path = ThemeForm;
 			sourceTree = "<group>";
@@ -159,9 +161,17 @@
 			children = (
 				982D72EB299F46F7003DCC67 /* TitleFormView.swift */,
 				982D72EE299F657F003DCC67 /* TitleFormCellView.swift */,
-				982D72F8299FBD8B003DCC67 /* TitleFormView+Types.swift */,
+				982D72F8299FBD8B003DCC67 /* TitleFormView+CellType.swift */,
 			);
 			path = TitleForm;
+			sourceTree = "<group>";
+		};
+		986577DD29A4EF2900BB1BDA /* RootForm */ = {
+			isa = PBXGroup;
+			children = (
+				982D72E1299E6E33003DCC67 /* FormView.swift */,
+			);
+			path = RootForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +190,9 @@
 			dependencies = (
 			);
 			name = "Multi-form";
+			packageProductDependencies = (
+				986577DB29A3413600BB1BDA /* ComposableArchitecture */,
+			);
 			productName = "Multi-form";
 			productReference = 982D72B4299E68A9003DCC67 /* Multi-form.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 982D72AB299E68A8003DCC67;
+			packageReferences = (
+				986577DA29A3413600BB1BDA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 982D72B5299E68A9003DCC67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,7 +313,7 @@
 				982D72EC299F46F7003DCC67 /* TitleFormView.swift in Sources */,
 				982D72E6299F1E2B003DCC67 /* ThemeType.swift in Sources */,
 				982D72E4299F1DFF003DCC67 /* ThemeCellView.swift in Sources */,
-				982D72F9299FBD8B003DCC67 /* TitleFormView+Types.swift in Sources */,
+				982D72F9299FBD8B003DCC67 /* TitleFormView+CellType.swift in Sources */,
 				982D72EF299F657F003DCC67 /* TitleFormCellView.swift in Sources */,
 				982D72E9299F1E89003DCC67 /* ThemeFormView.swift in Sources */,
 				982D72E2299E6E33003DCC67 /* FormView.swift in Sources */,
@@ -621,6 +637,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		986577DA29A3413600BB1BDA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		986577DB29A3413600BB1BDA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 986577DA29A3413600BB1BDA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 982D72AC299E68A9003DCC67 /* Project object */;
 }

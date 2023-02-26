@@ -1,23 +1,10 @@
 import Foundation
 
-struct Theme: Identifiable, CaseIterable {
-    static var allCases: [Theme] = [
-        Theme(type: .meal, isCheck: false),
-        Theme(type: .meeting, isCheck: false),
-        Theme(type: .travel, isCheck: false),
-        Theme(type: .etc, isCheck: false)
-    ]
-    
-    let type: ThemeType
-    var id: String { type.title }
-    var isCheck: Bool
-}
-
-enum ThemeType {
-    case meal
-    case meeting
-    case travel
-    case etc
+enum ThemeType: String, CaseIterable {
+    case meal = "meal"
+    case meeting = "meeting"
+    case travel = "travel"
+    case etc = "etc"
     
     var title: String {
         switch self {
