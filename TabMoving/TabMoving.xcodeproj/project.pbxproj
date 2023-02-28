@@ -15,6 +15,8 @@
 		9865781829AB561100BB1BDA /* TabMovingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781729AB561100BB1BDA /* TabMovingUITests.swift */; };
 		9865781A29AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */; };
 		9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865782629AB56D000BB1BDA /* HeaderTabView.swift */; };
+		9865784029AE375500BB1BDA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865783F29AE375500BB1BDA /* Menu.swift */; };
+		9865784229AE378100BB1BDA /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865784129AE378100BB1BDA /* ContentListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		9865781729AB561100BB1BDA /* TabMovingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITests.swift; sourceTree = "<group>"; };
 		9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9865782629AB56D000BB1BDA /* HeaderTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabView.swift; sourceTree = "<group>"; };
+		9865783F29AE375500BB1BDA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		9865784129AE378100BB1BDA /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +100,13 @@
 		986577FB29AB560F00BB1BDA /* TabMoving */ = {
 			isa = PBXGroup;
 			children = (
+				9865783F29AE375500BB1BDA /* Menu.swift */,
 				986577FC29AB560F00BB1BDA /* TabMovingApp.swift */,
 				986577FE29AB560F00BB1BDA /* ContentView.swift */,
 				9865782629AB56D000BB1BDA /* HeaderTabView.swift */,
 				9865780029AB561100BB1BDA /* Assets.xcassets */,
 				9865780229AB561100BB1BDA /* Preview Content */,
+				9865784129AE378100BB1BDA /* ContentListView.swift */,
 			);
 			path = TabMoving;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9865784229AE378100BB1BDA /* ContentListView.swift in Sources */,
 				986577FF29AB560F00BB1BDA /* ContentView.swift in Sources */,
 				9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */,
+				9865784029AE375500BB1BDA /* Menu.swift in Sources */,
 				986577FD29AB560F00BB1BDA /* TabMovingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

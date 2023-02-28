@@ -1,41 +1,7 @@
 import SwiftUI
 
-struct ListView: View {
-    struct CellModel: Identifiable {
-        var id = UUID()
-        let title: String
-        let names: [String]
-    }
-    
-    private var models: [CellModel] = [.init(title: "타이틀1", names: ["A", "B", "C"])]
-    
-    var body: some View {
-        List(models) { item in
-            VStack {
-                Text(item.title)
-                    .bold()
-                
-                Text(item.names.joined(separator: ", "))
-            }
-            .background(.purple)
-        }
-    }
-}
-
-enum Menu: Int, CaseIterable {
-    case menu1 = 0
-    case menu2 = 1
-    
-    var title: String {
-        switch self {
-        case .menu1: return "메뉴1"
-        case .menu2: return "메뉴2"
-        }
-    }
-}
-
 struct ContentView: View {
-    @State private var selectedIndex = Menu.menu1.rawValue
+    @State private var selectedMenuIndex = Menu.menu1.rawValue
     private let menus: [Menu] = Menu.allCases
     
     var body: some View {
@@ -45,22 +11,28 @@ struct ContentView: View {
             GeometryReader { geo in
                 VStack {
                     HeaderTabView(
-                        activeIndex: $selectedIndex,
+                        activeIndex: $selectedMenuIndex,
                         menus: menus,
                         fullWidth: geo.size.width,
-                        spacing: 60,
+                        spacing: 32,
                         horizontalInset: 40)
                     
                     // Pages
-                    TabView(selection: $selectedIndex) {
-                        ListView()
-                            .tag(0)
+                    TabView(selection: $selectedMenuIndex) {
+                        ContentListView()
+                            .tag(Menu.menu1.rawValue)
+
+                        Text(Menu.menu2.title)
+                            .tag(Menu.menu2.rawValue)
                         
-                        ListView()
-                            .tag(1)
+                        ContentListView()
+                            .tag(Menu.menu3.rawValue)
+
+                        Text(Menu.menu4.title)
+                            .tag(Menu.menu4.rawValue)
                     }
                     // selectedIndex 가 바뀌었을때 컨텐츠 슬라이드
-                    .animation(.default, value: selectedIndex)
+                    .animation(.default, value: selectedMenuIndex)
                     .background(.gray)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
                     .tabViewStyle(.page(indexDisplayMode: .never))

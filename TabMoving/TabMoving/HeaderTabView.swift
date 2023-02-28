@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct HeaderTabView: View {
-    
+    // menu 는 2개 이상이라는 가정
     let menus: [Menu]
     
     @Binding var activeIndex: Int
     @State private var barX: CGFloat = 0
     
     /// 각 버튼의 leading X position : 바 애니메이션에 필요
-    private let spacing: CGFloat
-    private let buttonLeadings: [CGFloat]
+    private let spacing: CGFloat  // 버튼과 버튼 사이의 간격
+    private var buttonLeadings: [CGFloat]
     private let barWidth: CGFloat
     private let buttonWidth: CGFloat
     private let fullWidth: CGFloat
@@ -30,9 +30,17 @@ struct HeaderTabView: View {
         // 전체크기 = (버튼*2) + 패딩 + 양옆 간격
         self.fullWidth = fullWidth - horizontalInset
         self.spacing = spacing
-        self.buttonWidth = (self.fullWidth-spacing)/CGFloat(menus.count)
+        
+        // 버튼 2개일때: 전체 간격 - (spacing * 1)
+        // 버튼 3개일때: 전체 간격 - (spacing * 2)
+        self.buttonWidth =
+        (self.fullWidth-spacing * CGFloat(menus.count-1)) / CGFloat(menus.count)
         self.barWidth = buttonWidth
-        self.buttonLeadings = [0, barWidth+spacing]
+        buttonLeadings = [CGFloat](repeating: 0, count: menus.count)
+        for i in 0..<menus.count {
+            let leading = (barWidth+spacing) * CGFloat(i)
+            buttonLeadings[i] = leading
+        }
     }
     
     var body: some View {
@@ -47,8 +55,8 @@ struct HeaderTabView: View {
                     } label: {
                         Text(menus[row].title)
                             .frame(maxWidth: buttonWidth)
-                        //                            .border(.orange, width: 1)
-                            .foregroundColor(.black)
+                            .border(.orange, width: 1)
+                            .foregroundColor(.white)
                             .bold()
                     }
                 }
@@ -56,7 +64,8 @@ struct HeaderTabView: View {
             .frame(width: fullWidth, height: 40)
             
             Rectangle()
-                .frame(width: barWidth, height: 2)
+                .foregroundColor(.black)
+                .frame(width: barWidth, height: 4)
                 .alignmentGuide(.leading) { $0[.leading] }
                 .offset(.init(width: barX, height: 0))
         }
@@ -68,7 +77,7 @@ struct HeaderTabView: View {
                 barX = buttonLeadings[selectedRow]
             }
         }
-        .background(.yellow)
+        .background(.purple)
     }
 }
 
@@ -76,7 +85,7 @@ struct HeaderTabView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderTabView(
             activeIndex: .constant(0),
-            menus: [.menu1, .menu2],
+            menus: Menu.allCases,
             fullWidth: UIScreen.main.bounds.width,
             spacing: 40,
             horizontalInset: 10)
