@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HeaderTabView: View {
     
-    let menus: [String]
+    let menus: [Menu]
     
     @Binding var activeIndex: Int
     @State private var barX: CGFloat = 0
@@ -18,7 +18,7 @@ struct HeaderTabView: View {
     // -> widths[activeIndex] 로 접근 가능
     init(
         activeIndex: Binding<Int>,
-        menus: [String],
+        menus: [Menu],
         fullWidth: CGFloat,
         spacing: CGFloat,
         horizontalInset: CGFloat
@@ -45,7 +45,7 @@ struct HeaderTabView: View {
                             barX = buttonLeadings[row]
                         }
                     } label: {
-                        Text(menus[row])
+                        Text(menus[row].title)
                             .frame(maxWidth: buttonWidth)
                         //                            .border(.orange, width: 1)
                             .foregroundColor(.black)
@@ -76,7 +76,7 @@ struct HeaderTabView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderTabView(
             activeIndex: .constant(0),
-            menus: ["menu-A", "munu-B"],
+            menus: [.menu1, .menu2],
             fullWidth: UIScreen.main.bounds.width,
             spacing: 40,
             horizontalInset: 10)

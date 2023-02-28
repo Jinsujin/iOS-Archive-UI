@@ -22,9 +22,21 @@ struct ListView: View {
     }
 }
 
+enum Menu: Int, CaseIterable {
+    case menu1 = 0
+    case menu2 = 1
+    
+    var title: String {
+        switch self {
+        case .menu1: return "메뉴1"
+        case .menu2: return "메뉴2"
+        }
+    }
+}
+
 struct ContentView: View {
-    @State private var selectedIndex = 0
-    private let menus = ["메뉴1", "메뉴2"]
+    @State private var selectedIndex = Menu.menu1.rawValue
+    private let menus: [Menu] = Menu.allCases
     
     var body: some View {
         
