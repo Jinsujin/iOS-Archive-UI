@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9865784429AF075500BB1BDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865784329AF075500BB1BDA /* SettingsView.swift */; };
+		9865784729AF0CAF00BB1BDA /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 9865784629AF0CAF00BB1BDA /* SwiftUINavigation */; };
+		9865784C29AF131B00BB1BDA /* SettingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865784B29AF131B00BB1BDA /* SettingDetailView.swift */; };
 		98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */; };
 		98E6CB25299B66EA00DC50C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB24299B66EA00DC50C0 /* Assets.xcassets */; };
 		98E6CB28299B66EA00DC50C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E6CB27299B66EA00DC50C0 /* Preview Assets.xcassets */; };
@@ -45,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9865784329AF075500BB1BDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		9865784B29AF131B00BB1BDA /* SettingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailView.swift; sourceTree = "<group>"; };
 		98E6CB1D299B66E800DC50C0 /* SwiftUI-SimpleSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-SimpleSocial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_SimpleSocialApp.swift; sourceTree = "<group>"; };
 		98E6CB24299B66EA00DC50C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9865784729AF0CAF00BB1BDA /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9865784829AF10DC00BB1BDA /* Step1 */ = {
+			isa = PBXGroup;
+			children = (
+				98E6CB6E299CFFF400DC50C0 /* View */,
+				98E6CB56299BA3ED00DC50C0 /* Logic */,
+				98E6CB67299CFEBD00DC50C0 /* Helper */,
+			);
+			path = Step1;
+			sourceTree = "<group>";
+		};
+		9865784929AF110800BB1BDA /* Step2 */ = {
+			isa = PBXGroup;
+			children = (
+				9865784A29AF110D00BB1BDA /* View */,
+			);
+			path = Step2;
+			sourceTree = "<group>";
+		};
+		9865784A29AF110D00BB1BDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9865784329AF075500BB1BDA /* SettingsView.swift */,
+				9865784B29AF131B00BB1BDA /* SettingDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		98E6CB14299B66E800DC50C0 = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +148,9 @@
 		98E6CB1F299B66E800DC50C0 /* SwiftUI-SimpleSocial */ = {
 			isa = PBXGroup;
 			children = (
+				9865784829AF10DC00BB1BDA /* Step1 */,
+				9865784929AF110800BB1BDA /* Step2 */,
 				98E6CB62299BB50A00DC50C0 /* Common */,
-				98E6CB67299CFEBD00DC50C0 /* Helper */,
-				98E6CB56299BA3ED00DC50C0 /* Logic */,
-				98E6CB6E299CFFF400DC50C0 /* View */,
 				98E6CB20299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift */,
 				98E6CB24299B66EA00DC50C0 /* Assets.xcassets */,
 				98E6CB26299B66EA00DC50C0 /* Preview Content */,
@@ -238,6 +270,9 @@
 			dependencies = (
 			);
 			name = "SwiftUI-SimpleSocial";
+			packageProductDependencies = (
+				9865784629AF0CAF00BB1BDA /* SwiftUINavigation */,
+			);
 			productName = "SwiftUI-SimpleSocial";
 			productReference = 98E6CB1D299B66E800DC50C0 /* SwiftUI-SimpleSocial.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +345,9 @@
 				Base,
 			);
 			mainGroup = 98E6CB14299B66E800DC50C0;
+			packageReferences = (
+				9865784529AF0CAF00BB1BDA /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = 98E6CB1E299B66E800DC50C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,9 +398,11 @@
 				98E6CB4F299B8FDD00DC50C0 /* LoginView.swift in Sources */,
 				98E6CB6B299CFF1B00DC50C0 /* Store.swift in Sources */,
 				98E6CB55299B955400DC50C0 /* SearchView.swift in Sources */,
+				9865784429AF075500BB1BDA /* SettingsView.swift in Sources */,
 				98E6CB6D299CFF4A00DC50C0 /* User.swift in Sources */,
 				98E6CB61299BB4E400DC50C0 /* NoDataView.swift in Sources */,
 				98E6CB21299B66E800DC50C0 /* SwiftUI_SimpleSocialApp.swift in Sources */,
+				9865784C29AF131B00BB1BDA /* SettingDetailView.swift in Sources */,
 				98E6CB58299BA40100DC50C0 /* SocialSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +723,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9865784529AF0CAF00BB1BDA /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9865784629AF0CAF00BB1BDA /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9865784529AF0CAF00BB1BDA /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 98E6CB15299B66E800DC50C0 /* Project object */;
 }

@@ -7,9 +7,19 @@ struct SwiftUI_SimpleSocialApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView(
-                processor: ActionProcessor(
-                    system: SocialSystem(with: store)
+//            LoginView(
+//                processor: ActionProcessor(
+//                    system: SocialSystem(with: store)
+//                )
+//            )
+            
+            SettingsView(
+                model: SettingsModel(
+                    loginUser: LoginUser(
+                        id: UUID(),
+                        followingList: ["B", "C"],
+                        followerCount: 0
+                    )
                 )
             )
         }
