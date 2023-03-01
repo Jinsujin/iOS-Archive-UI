@@ -10,9 +10,13 @@ struct UserSetting {
     }
 }
 
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable {
     case dark
     case light
+    
+    var id: String {
+        self.rawValue
+    }
 }
 
 struct LoginUser: Identifiable {
@@ -32,11 +36,12 @@ final class SettingsModel: ObservableObject {
     }
     
     enum Destination {
-        case detail(UserSetting)
+        case detail(SettingDetailModel)
     }
     
     func touchedDetailButton() {
-        self.destination = .detail(userSetting)
+        let model = SettingDetailModel(userSetting: userSetting)
+        self.destination = .detail(model)
     }
     
     func dismissDetailButtonTouched() {
@@ -45,11 +50,12 @@ final class SettingsModel: ObservableObject {
     
     func confirmButtonTouched() {
         defer { self.destination = nil }
-        
-        guard case var .detail(userSetting) = self.destination else {
+        guard case let .detail(detailModel) = self.destination else {
             return
         }
-        userSetting.theme = .dark
+        
+        var userSetting = detailModel.userSetting
+        userSetting.theme = (userSetting.theme == .light) ? .dark : .light
         self.userSetting = userSetting
     }
 }
@@ -79,22 +85,22 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .sheet(
                 unwrapping: $model.destination,
-                case: CasePath(SettingsModel.Destination.detail)) { $userSetting in
+                case: CasePath(SettingsModel.Destination.detail)) { $model in
                     NavigationStack {
-                        SettingDetailView(userSetting: $userSetting)
-                        .navigationTitle("Detail")
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("닫기") {
-                                    model.dismissDetailButtonTouched()
+                        SettingDetailView(model: model)
+                            .navigationTitle("Detail")
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("닫기") {
+                                        self.model.dismissDetailButtonTouched()
+                                    }
+                                }
+                                ToolbarItem(placement: .confirmationAction) {
+                                    Button("테마 변경") {
+                                        self.model.confirmButtonTouched()
+                                    }
                                 }
                             }
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("테마 변경") {
-                                    model.confirmButtonTouched()
-                                }
-                            }
-                        }
                     }
                 }
         }
