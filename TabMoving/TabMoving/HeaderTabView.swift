@@ -4,12 +4,12 @@ struct HeaderTabView: View {
     // menu 는 2개 이상이라는 가정
     let menus: [Menu]
     
-    @Binding var activeIndex: Int
+    @Binding var activeMenu: Menu
     @State private var barX: CGFloat = 0
     
     /// 각 버튼의 leading X position : 바 애니메이션에 필요
     private let spacing: CGFloat  // 버튼과 버튼 사이의 간격
-    private var buttonLeadings: [CGFloat]
+    private let buttonLeadings: [CGFloat]
     private let barWidth: CGFloat
     private let buttonWidth: CGFloat
     private let fullWidth: CGFloat
@@ -17,14 +17,14 @@ struct HeaderTabView: View {
     // 초기화할때 각 버튼의 leading 값을 배열에 넣어두기
     // -> widths[activeIndex] 로 접근 가능
     init(
-        activeIndex: Binding<Int>,
+        activeMenu: Binding<Menu>,
         menus: [Menu],
         fullWidth: CGFloat,
         spacing: CGFloat,
         horizontalInset: CGFloat
     ) {
         self.menus = menus
-        self._activeIndex = activeIndex
+        self._activeMenu = activeMenu
         
         // |옆간격|버튼| 패딩 |버튼|옆간격|
         // 전체크기 = (버튼*2) + 패딩 + 양옆 간격
@@ -36,24 +36,26 @@ struct HeaderTabView: View {
         self.buttonWidth =
         (self.fullWidth-spacing * CGFloat(menus.count-1)) / CGFloat(menus.count)
         self.barWidth = buttonWidth
-        buttonLeadings = [CGFloat](repeating: 0, count: menus.count)
+        
+        var leadings = [CGFloat](repeating: 0, count: menus.count)
         for i in 0..<menus.count {
             let leading = (barWidth+spacing) * CGFloat(i)
-            buttonLeadings[i] = leading
+            leadings[i] = leading
         }
+        self.buttonLeadings = leadings
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: spacing) {
-                ForEach(0..<menus.count, id: \.self) { row in
+                ForEach(menus, id: \.self) { menu in
                     Button {
-                        activeIndex = row
+                        activeMenu = menu
                         withAnimation {
-                            barX = buttonLeadings[row]
+                            barX = buttonLeadings[menu.rawValue]
                         }
                     } label: {
-                        Text(menus[row].title)
+                        Text(menu.title)
                             .frame(maxWidth: buttonWidth)
                             .border(.orange, width: 1)
                             .foregroundColor(.white)
@@ -72,9 +74,9 @@ struct HeaderTabView: View {
         // 이 view 에서 특정한값(activeIndex) 이 변경되었을때, 이벤트 발생!
         // 1. 컨텐츠를 스크롤 제스쳐로 이동했을때
         // 2. 탭 아이템을 터치했을때
-        .onChange(of: activeIndex) { selectedRow in
+        .onChange(of: activeMenu) { selectedMenu in
             withAnimation {
-                barX = buttonLeadings[selectedRow]
+                barX = buttonLeadings[selectedMenu.rawValue]
             }
         }
         .background(.purple)
@@ -84,7 +86,7 @@ struct HeaderTabView: View {
 struct HeaderTabView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderTabView(
-            activeIndex: .constant(0),
+            activeMenu: .constant(Menu.menu1),
             menus: Menu.allCases,
             fullWidth: UIScreen.main.bounds.width,
             spacing: 40,

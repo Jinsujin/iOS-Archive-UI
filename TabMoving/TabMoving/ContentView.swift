@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedMenuIndex = Menu.menu1.rawValue
-    private let menus: [Menu] = Menu.allCases
+    @State private var activeMenu = Menu.menu1
     
     var body: some View {
         
@@ -11,28 +10,28 @@ struct ContentView: View {
             GeometryReader { geo in
                 VStack {
                     HeaderTabView(
-                        activeIndex: $selectedMenuIndex,
-                        menus: menus,
+                        activeMenu: $activeMenu,
+                        menus: Menu.allCases,
                         fullWidth: geo.size.width,
                         spacing: 32,
                         horizontalInset: 40)
                     
                     // Pages
-                    TabView(selection: $selectedMenuIndex) {
+                    TabView(selection: $activeMenu) {
                         ContentListView()
-                            .tag(Menu.menu1.rawValue)
+                            .tag(Menu.menu1)
 
                         Text(Menu.menu2.title)
-                            .tag(Menu.menu2.rawValue)
+                            .tag(Menu.menu2)
                         
                         ContentListView()
-                            .tag(Menu.menu3.rawValue)
+                            .tag(Menu.menu3)
 
                         Text(Menu.menu4.title)
-                            .tag(Menu.menu4.rawValue)
+                            .tag(Menu.menu4)
                     }
                     // selectedIndex 가 바뀌었을때 컨텐츠 슬라이드
-                    .animation(.default, value: selectedMenuIndex)
+                    .animation(.default, value: activeMenu)
                     .background(.gray)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 200)
                     .tabViewStyle(.page(indexDisplayMode: .never))
