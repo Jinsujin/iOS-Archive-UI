@@ -51,9 +51,11 @@ struct HeaderTabView: View {
                 ForEach(menus, id: \.self) { menu in
                     Button {
                         activeMenu = menu
-                        withAnimation {
-                            barX = buttonLeadings[menu.rawValue]
-                        }
+                        // .onChange(of: activeMenu) 가 아래 코드를 대체한다
+//                        withAnimation {
+//                            barX = buttonLeadings[menu.rawValue]
+//                        }
+                        
                     } label: {
                         Text(menu.title)
                             .frame(maxWidth: buttonWidth)

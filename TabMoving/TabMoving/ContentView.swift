@@ -37,7 +37,7 @@ struct ContentView: View {
                     .tabViewStyle(.page(indexDisplayMode: .never))
                 }
                 .background(.orange)
-                .navigationTitle("약속 관리")
+                .navigationTitle("Tab Menu")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
