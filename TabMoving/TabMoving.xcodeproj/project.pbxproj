@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		983E632A29BA085F00B00016 /* AppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 983E632929BA085F00B00016 /* AppPackage */; };
+		983E632E29BA148E00B00016 /* ComposableExample in Frameworks */ = {isa = PBXBuildFile; productRef = 983E632D29BA148E00B00016 /* ComposableExample */; };
 		986577FD29AB560F00BB1BDA /* TabMovingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577FC29AB560F00BB1BDA /* TabMovingApp.swift */; };
 		986577FF29AB560F00BB1BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577FE29AB560F00BB1BDA /* ContentView.swift */; };
 		9865780129AB561100BB1BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9865780029AB561100BB1BDA /* Assets.xcassets */; };
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983E632A29BA085F00B00016 /* AppPackage in Frameworks */,
+				983E632E29BA148E00B00016 /* ComposableExample in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +156,7 @@
 			);
 			name = TabMoving;
 			packageProductDependencies = (
-				983E632929BA085F00B00016 /* AppPackage */,
+				983E632D29BA148E00B00016 /* ComposableExample */,
 			);
 			productName = TabMoving;
 			productReference = 986577F929AB560F00BB1BDA /* TabMoving.app */;
@@ -594,9 +594,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		983E632929BA085F00B00016 /* AppPackage */ = {
+		983E632D29BA148E00B00016 /* ComposableExample */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = AppPackage;
+			productName = ComposableExample;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

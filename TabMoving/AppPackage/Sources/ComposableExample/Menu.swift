@@ -1,6 +1,6 @@
 import Foundation
 
-enum Menu: Int, CaseIterable {
+public enum Menu: Int, CaseIterable {
     case menu1 = 0
     case menu2 = 1
     case menu3 = 2

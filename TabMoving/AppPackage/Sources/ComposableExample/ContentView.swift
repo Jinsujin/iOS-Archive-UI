@@ -2,20 +2,30 @@ import ComposableArchitecture
 import SwiftUI
 
 
-struct RootFeature: ReducerProtocol {
-    struct State: Equatable {
+public struct RootFeature: ReducerProtocol {
+    public init() {}
+    
+    public struct State: Equatable {
         var activeMenu: Menu = .menu1
+        var secondTab = SecondTabFeature.State()
+        
+        public init() {}
     }
     
-    enum Action {
+    public enum Action {
         case activeMenuChanged(Menu)
+        case secondTab(SecondTabFeature.Action)
     }
     
-    var body: some ReducerProtocol<State, Action> {
+    public var body: some ReducerProtocol<State, Action> {
         Reduce { state, action in
             switch action {
             case let .activeMenuChanged(menu):
                 state.activeMenu = menu
+                return .none
+                
+            case .secondTab(.goInventoryButtonTapped):
+                state.activeMenu = .settings
                 return .none
             }
         }
@@ -23,11 +33,15 @@ struct RootFeature: ReducerProtocol {
 }
 
 
-struct ContentView: View {
+public struct ComposableExampleContentView: View {
     
     let store: StoreOf<RootFeature>
     
-    var body: some View {
+    public init(store: StoreOf<RootFeature>) {
+        self.store = store
+    }
+    
+    public var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             NavigationView {
                 // 하위뷰(HeaderTabView)에 상위뷰(VStack)의 크기를 넣어주기 위해 사용
@@ -49,7 +63,10 @@ struct ContentView: View {
                             ContentListView()
                                 .tag(Menu.menu1)
                             
-                            Text(Menu.menu2.title)
+                            SecondTabView(store: self.store.scope(
+                                state: \.secondTab,
+                                action: RootFeature.Action.secondTab)
+                            )
                                 .tag(Menu.menu2)
                             
                             ContentListView()
@@ -87,7 +104,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store:
+        ComposableExampleContentView(store:
                 .init(initialState: RootFeature.State(),
                       reducer: RootFeature()._printChanges()
                      )
