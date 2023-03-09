@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		983E632A29BA085F00B00016 /* AppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 983E632929BA085F00B00016 /* AppPackage */; };
 		986577FD29AB560F00BB1BDA /* TabMovingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577FC29AB560F00BB1BDA /* TabMovingApp.swift */; };
 		986577FF29AB560F00BB1BDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986577FE29AB560F00BB1BDA /* ContentView.swift */; };
 		9865780129AB561100BB1BDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9865780029AB561100BB1BDA /* Assets.xcassets */; };
@@ -14,9 +15,6 @@
 		9865780E29AB561100BB1BDA /* TabMovingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865780D29AB561100BB1BDA /* TabMovingTests.swift */; };
 		9865781829AB561100BB1BDA /* TabMovingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781729AB561100BB1BDA /* TabMovingUITests.swift */; };
 		9865781A29AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */; };
-		9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865782629AB56D000BB1BDA /* HeaderTabView.swift */; };
-		9865784029AE375500BB1BDA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865783F29AE375500BB1BDA /* Menu.swift */; };
-		9865784229AE378100BB1BDA /* ContentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9865784129AE378100BB1BDA /* ContentListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		983E632729BA062A00B00016 /* AppPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppPackage; sourceTree = "<group>"; };
 		986577F929AB560F00BB1BDA /* TabMoving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabMoving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986577FC29AB560F00BB1BDA /* TabMovingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingApp.swift; sourceTree = "<group>"; };
 		986577FE29AB560F00BB1BDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,9 +46,6 @@
 		9865781329AB561100BB1BDA /* TabMovingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabMovingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9865781729AB561100BB1BDA /* TabMovingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITests.swift; sourceTree = "<group>"; };
 		9865781929AB561100BB1BDA /* TabMovingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMovingUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9865782629AB56D000BB1BDA /* HeaderTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTabView.swift; sourceTree = "<group>"; };
-		9865783F29AE375500BB1BDA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		9865784129AE378100BB1BDA /* ContentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983E632A29BA085F00B00016 /* AppPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,13 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		983E632829BA085F00B00016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		986577F029AB560F00BB1BDA = {
 			isa = PBXGroup;
 			children = (
+				983E632729BA062A00B00016 /* AppPackage */,
 				986577FB29AB560F00BB1BDA /* TabMoving */,
 				9865780C29AB561100BB1BDA /* TabMovingTests */,
 				9865781629AB561100BB1BDA /* TabMovingUITests */,
 				986577FA29AB560F00BB1BDA /* Products */,
+				983E632829BA085F00B00016 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,13 +106,10 @@
 		986577FB29AB560F00BB1BDA /* TabMoving */ = {
 			isa = PBXGroup;
 			children = (
-				9865783F29AE375500BB1BDA /* Menu.swift */,
 				986577FC29AB560F00BB1BDA /* TabMovingApp.swift */,
 				986577FE29AB560F00BB1BDA /* ContentView.swift */,
-				9865782629AB56D000BB1BDA /* HeaderTabView.swift */,
 				9865780029AB561100BB1BDA /* Assets.xcassets */,
 				9865780229AB561100BB1BDA /* Preview Content */,
-				9865784129AE378100BB1BDA /* ContentListView.swift */,
 			);
 			path = TabMoving;
 			sourceTree = "<group>";
@@ -152,6 +155,9 @@
 			dependencies = (
 			);
 			name = TabMoving;
+			packageProductDependencies = (
+				983E632929BA085F00B00016 /* AppPackage */,
+			);
 			productName = TabMoving;
 			productReference = 986577F929AB560F00BB1BDA /* TabMoving.app */;
 			productType = "com.apple.product-type.application";
@@ -266,10 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9865784229AE378100BB1BDA /* ContentListView.swift in Sources */,
 				986577FF29AB560F00BB1BDA /* ContentView.swift in Sources */,
-				9865782729AB56D000BB1BDA /* HeaderTabView.swift in Sources */,
-				9865784029AE375500BB1BDA /* Menu.swift in Sources */,
 				986577FD29AB560F00BB1BDA /* TabMovingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +592,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		983E632929BA085F00B00016 /* AppPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppPackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 986577F129AB560F00BB1BDA /* Project object */;
 }
