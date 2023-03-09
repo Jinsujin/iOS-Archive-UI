@@ -12,7 +12,7 @@ public struct RootFeature: ReducerProtocol {
         public init() {}
     }
     
-    public enum Action {
+    public enum Action: Equatable {
         case activeMenuChanged(Menu)
         case secondTab(SecondTabFeature.Action)
     }
@@ -24,10 +24,25 @@ public struct RootFeature: ReducerProtocol {
                 state.activeMenu = menu
                 return .none
                 
-            case .secondTab(.goInventoryButtonTapped):
-                state.activeMenu = .settings
+            // delegate 적용 전
+//            case .secondTab(.goSettingButtonTapped):
+//                state.activeMenu = .settings
+//                return .none
+                
+            // delegate 적용 후
+            case let .secondTab(.delegate(action)):
+                switch action {
+                case .switchSettingTab:
+                    state.activeMenu = .settings
+                    return .none
+                }
+                
+            default:
                 return .none
             }
+        }
+        Scope(state: \.secondTab, action: /Action.secondTab) {
+            SecondTabFeature()
         }
     }
 }

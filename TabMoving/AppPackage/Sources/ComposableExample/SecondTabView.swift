@@ -5,12 +5,20 @@ public struct SecondTabFeature: ReducerProtocol {
     public struct State: Equatable {}
     
     public enum Action: Equatable {
-        case goInventoryButtonTapped
+        case goSettingButtonTapped
+        case delegate(Delegate)
+    }
+    
+    public enum Delegate: Equatable {
+        case switchSettingTab
     }
     
     public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
-        case .goInventoryButtonTapped:
+        case .goSettingButtonTapped:
+            return .send(.delegate(.switchSettingTab))
+            
+        case .delegate:
             return .none
         }
     }
@@ -23,7 +31,7 @@ struct SecondTabView: View {
     var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             Button {
-                viewStore.send(.goInventoryButtonTapped)
+                viewStore.send(.goSettingButtonTapped)
             } label: {
                 Text("설정화면 이동")
             }

@@ -16,7 +16,14 @@ final class TabMenuTests: XCTestCase {
             reducer: RootFeature()
         )
         
-        await store.send(.secondTab(.goInventoryButtonTapped)) {
+        // NOTE: - delegate 적용 전 테스트
+//        await store.send(.secondTab(.goInventoryButtonTapped)) {
+//            $0.activeMenu = .settings
+//        }
+        
+        // NOTE: - delegate 적용 후 테스트
+        await store.send(.secondTab(.goSettingButtonTapped))
+        await store.receive(.secondTab(.delegate(.switchSettingTab))) {
             $0.activeMenu = .settings
         }
     }
