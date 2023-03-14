@@ -7,12 +7,12 @@ public struct SecondTabFeature: ReducerProtocol {
     public enum Action: Equatable {
         case goSettingButtonTapped
         case delegate(Delegate)
+        
+        public enum Delegate: Equatable {
+            case switchSettingTab
+        }
     }
-    
-    public enum Delegate: Equatable {
-        case switchSettingTab
-    }
-    
+
     public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
         switch action {
         case .goSettingButtonTapped:
