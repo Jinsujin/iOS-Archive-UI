@@ -22,3 +22,13 @@
 | -- |
 |![탭이동](https://user-images.githubusercontent.com/12508578/221867109-c7b1144f-5186-405e-85c3-db5a98a6acbd.gif)|
 |`SwiftUI` `TabView`|
+
+
+### Xib & StoryBoard Practice
+
+|[ScrollView + StackView 조합](https://github.com/Jinsujin/iOS-Archive-UI/tree/main/StackViewInScrollView) |-|
+|-|-|
+|![UI-xib-StackViewInScrollView](https://user-images.githubusercontent.com/12508578/227708267-b1895198-8c72-43c6-a3c2-f80e48beffbe.gif)|-|
+|`xib`|-|
+
+
