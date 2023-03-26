@@ -10,27 +10,67 @@ import XCTest
 
 final class SearchAppTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_append_whenInitialized_shouldEmptyData() {
+        let repository = RecentSearchRepository()
+        XCTAssertEqual(0, repository.all().count)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_append_multipleData_matchCount() {
+        let words = ["Apple", "Orange", "Cherry"]
+        let repository = RecentSearchRepository(words: words)
+        XCTAssertEqual(words.count, repository.all().count)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_prefix_matchCount() {
+        let words = ["Apple", "Orange", "Cherry", "ABC"]
+        let repository = RecentSearchRepository(words: words)
+        let result = repository.prefixWords(with: "A")
+        XCTAssertEqual(2, result.count)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_prefixOver_matchCount() {
+        let words = ["Apple", "Orange", "Cherry", "ABC"]
+        let repository = RecentSearchRepository(words: words)
+        let result = repository.prefixWords(with: "Orangeee")
+        XCTAssertEqual(0, result.count)
+    }
+    
+    func testPerformance_after_repsotiry_search() throws {
+        // dummy: ["ACvp", "W", "996V", "uk", "Dpv", "G", "pe",...]
+        let dummy = generateRandomString(count: 1000)
+        let repo = RecentSearchRepository(words: dummy)
+        
+        measure {
+            for _ in 0..<10000 { // 0.036 sec: filter 를 사용했을때와 20배 차이
+                let _ = repo.prefixWords(with: "A")
+            }
         }
     }
+    
+    func testPerformance_search() throws {
+        // dummy: ["ACvp", "W", "996V", "uk", "Dpv", "G", "pe",...]
+        let dummy = generateRandomString(count: 1000)
+        
+        measure {
+            for _ in 0..<10000 { // 0.751 sec
+                let _ = dummy.filter({ $0.hasPrefix("A") })
+            }
+        }
+    }
+    
+    private func generateRandomString(count: Int) -> [String] {
+        var result = [String]()
 
+        for _ in 1...count {
+            let stringLength = Int.random(in: 1...5)
+            let randomString = randomString(length: stringLength)
+            result.append(randomString)
+        }
+        return result
+    }
+    
+    private func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
 }

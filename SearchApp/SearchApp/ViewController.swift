@@ -2,6 +2,10 @@ import UIKit
 
 class ViewController: UIViewController {
     private let cellId = "cellId"
+    private let recentSearchRepository = RecentSearchRepository(words: ["Apple", "Appear", "Orange", "Banana", "Game"])
+    
+    // 화면에 보여줄 입력한 글자와 일치하는 검색어 목록
+    private var matchedWords: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,20 @@ class ViewController: UIViewController {
         self.navigationItem.searchController = searchContoller
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
+    private func updateWords(inputText: String) {
+        // 1. 글자 입력이 없으면, 전체 최근 검색어들을 보여준다
+        if inputText.isEmpty {
+            self.matchedWords = recentSearchRepository.all()
+            self.tableView.reloadData()
+            return
+        }
+        
+        // 2. 글자 입력이 있으면 최근 검색어에서 일치하는 단어만 보여준다
+        let matchPrefixWords = recentSearchRepository.prefixWords(with: inputText)
+        self.matchedWords = matchPrefixWords
+        self.tableView.reloadData()
+    }
 }
 
 
@@ -42,7 +60,7 @@ class ViewController: UIViewController {
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        print("updateSearchResults: \(searchText)")
+        updateWords(inputText: searchText)
     }
 }
 
@@ -65,8 +83,7 @@ extension ViewController: UISearchBarDelegate {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-//        return self.viewModel.wordsCount()
+        return self.matchedWords.count
     }
 }
 
@@ -75,7 +92,7 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = "Title"
+        cell.textLabel?.text = self.matchedWords[indexPath.row]
         return cell
     }
     
@@ -83,4 +100,3 @@ extension ViewController: UITableViewDelegate {
         print("didSelectRowAt: ", indexPath.row)
     }
 }
-
